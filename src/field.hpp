@@ -10,9 +10,11 @@ public:
   Field();
   enum Type { EMPTY, BRICK, CONCRETE, LADDER, GOLD, PLAYER ,ENEMY, POLE, BRICK2, LADDER2 };
   void setBlock(Type type, int x, int y);
-  Type block(int x, int y) const;
+  Type getBlock(int x, int y) const;
   void draw(Painter &) const;
+  int playerX;
+  int playerY;
 private:
-  Type m_[HEIGHT][WIDTH];
   int level;
+  Type m_[HEIGHT][WIDTH];
 };

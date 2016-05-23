@@ -1,23 +1,26 @@
 #include "game.hpp"
 #include "painter.hpp"
 #include "field.hpp"
+#include "player.hpp"
 
-/*void Game::tick()
+Game::Game():field_(), player_(field_){
+}
+
+void Game::tick()
 {
-  if (!snake_.tick(field_))
+  if (!player_.tick(field_))
   {
-    snake_ = Snake();
     field_ = Field();
+    player_ = Player(field_);
   }
-}*/
+}
 
 void Game::draw(Painter &p) const
 {
   field_.draw(p);
 }
 
-/*void Game::keyEvent(Snake::Direction d)
+void Game::keyEvent(Player::Direction d)
 {
-  snake_.keyEvent(d);
+  player_.keyEvent(d);
 }
-*/

@@ -15,29 +15,29 @@ void display()
 
 void timer(int = 0)
 {
-  //game.tick();
+  game.tick();
   display();
   glutTimerFunc(300, timer, 0);
 }
 
-/*void keyEvent(int key, int, int)
+void keyEvent(int key, int, int)
 {
   switch (key)
   {
   case GLUT_KEY_LEFT:
-    game.keyEvent(Snake::LEFT);
+    game.keyEvent(Player::LEFT);
     break;
   case GLUT_KEY_UP:
-    game.keyEvent(Snake::UP);
+    game.keyEvent(Player::UP);
     break;
   case GLUT_KEY_RIGHT:
-    game.keyEvent(Snake::RIGHT);
+    game.keyEvent(Player::RIGHT);
     break;
   case GLUT_KEY_DOWN:
-    game.keyEvent(Snake::DOWN);
+    game.keyEvent(Player::DOWN);
     break;
   }
-}*/
+}
 
 int main(int argc, char **argv)
 {
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 	  Field::HEIGHT * Field::BLOCK_HEIGHT, 0, 
 	  -1.0, 1.0);
   glutDisplayFunc(display);
-  //glutSpecialFunc(keyEvent);
+  glutSpecialFunc(keyEvent);
   timer();
 
   glutMainLoop();

@@ -9,7 +9,7 @@ using namespace std;
 
 Field::Field()
 {
-  level = 1;
+  level = 0;
   level++;
   string command = "../lode_decode/decode ../lode_decode/loderun.dat ";
   command += char(level + '0');
@@ -59,6 +59,8 @@ Field::Field()
     }
     if (c == 'P'){
       m_[y][x] = PLAYER;
+      playerY = y;
+      playerX = x;
       continue;
     }
     if (c == '4'){
@@ -67,12 +69,6 @@ Field::Field()
     }
   }
 }
-/*for (int y = 0; y < HEIGHT; ++y){
-  for (int x = 0; x < WIDTH; ++x){
-    printf ("%d ", m_[y][x]);
-  }
-  printf("\n");
-}*/
   fin.close();
 }
 
@@ -81,7 +77,7 @@ void Field::setBlock(Type type, int x, int y)
   m_[y][x] = type;
 }
 
-Field::Type Field::block(int x, int y) const
+Field::Type Field::getBlock(int x, int y) const
 {
   return m_[y][x];
 }
