@@ -10,13 +10,10 @@ class Enemy
 {
 public:
 	Enemy(int, int);
-	void setEnemyX(int);
-	void setEnemyY(int);
 	bool tick(Field &);
 	enum Action { LEFT, UP, RIGHT, DOWN };
 	void updateBlocks(Field &field);
 	bool testMovement(Field &field);
-	void setOldBlockType();
 private:
 	Action actionX_;
 	Action actionY_;

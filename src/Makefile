@@ -8,7 +8,7 @@ main.o: main.cpp painter.hpp field.hpp
 	$(CC) $(FLAGS) main.cpp
 painter.o: painter.cpp painter.hpp
 	$(CC) $(FLAGS) painter.cpp
-field.o: field.cpp field.hpp painter.hpp
+field.o: field.cpp field.hpp painter.hpp enemy.hpp
 	$(CC) $(FLAGS) field.cpp
 player.o: player.cpp player.hpp field.hpp
 	$(CC) $(FLAGS) player.cpp

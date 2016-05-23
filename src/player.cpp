@@ -1,5 +1,8 @@
 #include "player.hpp"
 
+int Player::playerX = 0;
+int Player::playerY = 0;
+
 Player::Player(Field &field)
 {
   //remember start player pos
