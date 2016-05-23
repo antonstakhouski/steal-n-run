@@ -10,6 +10,7 @@ class Game
 {
 public:
   void tick();
+  void enemyTick();
   void draw(Painter &) const;
   void keyEvent(Player::Action);
   Game();

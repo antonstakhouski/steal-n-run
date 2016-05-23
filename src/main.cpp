@@ -13,6 +13,11 @@ void display()
   glutSwapBuffers();
 }
 
+void enemy_timer(int = 0){
+  game.enemyTick();
+  glutTimerFunc(200, enemy_timer, 0);
+}
+
 void timer(int = 0)
 {
   game.tick();
@@ -76,6 +81,7 @@ int main(int argc, char **argv)
   glutSpecialFunc(keyEvent);
   glutKeyboardFunc(keyEvent);
   timer();
+  enemy_timer();
 
   glutMainLoop();
 }
