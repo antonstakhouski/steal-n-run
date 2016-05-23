@@ -5,6 +5,9 @@
 #include <vector>
 
 class Painter;
+class Player;
+class Enemy;
+class Field;
 
 class Game
 {

@@ -2,14 +2,14 @@
 #include "painter.hpp"
 #include "field.hpp"
 #include "player.hpp"
+#include "enemy.hpp"
 
 Game::Game():field_(), player_(field_){
-	Enemy enemy;
+	Enemy *enemy;
 	for (unsigned int i = 0; i < field_.xvec.size(); i++){
-		enemy.setEnemyX(field_.xvec[i]);
-		enemy.setEnemyY(field_.yvec[i]);
-		enemy.setOldBlockType();
-		enemies.push_back(enemy);
+		enemy = new Enemy(field_.xvec[i], field_.yvec[i]);
+		enemies.push_back(*enemy);
+		delete enemy;
 	}
 }
 
@@ -29,12 +29,11 @@ void Game::enemyTick()
 		if(!enemies[i].tick(field_)){
 			enemies.clear();
 			field_ = Field();
-			Enemy enemy;
+			Enemy *enemy;
 			for (unsigned int i = 0; i < field_.xvec.size(); i++){
-				enemy.setEnemyX(field_.xvec[i]);
-				enemy.setEnemyY(field_.yvec[i]);
-				enemy.setOldBlockType();
-				enemies.push_back(enemy);
+				enemy = new Enemy(field_.xvec[i], field_.yvec[i]);
+				enemies.push_back(*enemy);
+				delete enemy;
 			}
 			player_ = Player(field_);
 			return;

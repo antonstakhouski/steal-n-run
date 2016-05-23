@@ -1,13 +1,15 @@
 #pragma once
 
 #include "field.hpp"
+#include "player.hpp"
 
 class Field;
+class Player;
 
 class Enemy
 {
 public:
-	Enemy();
+	Enemy(int, int);
 	void setEnemyX(int);
 	void setEnemyY(int);
 	bool tick(Field &);
@@ -16,7 +18,8 @@ public:
 	bool testMovement(Field &field);
 	void setOldBlockType();
 private:
-	Action action_;
+	Action actionX_;
+	Action actionY_;
 	int enemyX;
 	int enemyY;
 	int oldX;

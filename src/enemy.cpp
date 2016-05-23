@@ -10,9 +10,15 @@ void Enemy::setEnemyY(int y)
 	enemyY = y;
 }
 
-Enemy::Enemy()
+Enemy::Enemy(int x, int y)
 {
-	action_ = LEFT;
+	enemyX = x;
+	enemyY = y;
+	oldBlockType = Field::EMPTY;
+	oldX = enemyX;
+	oldY = enemyY;
+	actionX_ = LEFT;
+	actionY_ = LEFT;
 }
 
 void Enemy::setOldBlockType()
@@ -60,7 +66,7 @@ bool Enemy::testMovement(Field &field)
 
 bool Enemy::tick(Field &field)
 {
-	testX = enemyX;
+/*	testX = enemyX;
 	testY = enemyY;
 
 	if (action_ == LEFT)
@@ -79,6 +85,6 @@ bool Enemy::tick(Field &field)
 			action_ = RIGHT;
 		else 
 			action_ = LEFT;
-	}
+	}*/
 	return true;
 }

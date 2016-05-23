@@ -7,10 +7,10 @@
 class Field;
 
 struct digData{
-  int timeRemain;
-  int x;
-  int y;
-  Field::Type oldBlockType;
+	int timeRemain;
+	int x;
+	int y;
+	Field::Type oldBlockType;
 };
 
 class Player
@@ -23,11 +23,11 @@ public:
 	void updateBlocks(Field &field);
 	void testMovement(Field &field);
 	void setTrap(Field &field);
+	static int playerX;
+	static int playerY;
 private:
 	Action action_;
 	bool updateFlag;
-	int playerX;
-	int playerY;
 	int oldX;
 	int oldY;
 	int testX;
