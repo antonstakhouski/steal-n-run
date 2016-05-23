@@ -2,21 +2,31 @@
 #include <list>
 #include "field.hpp"
 
+#define trapNum 3
+#define trapUpdate 15
+
 class Field;
+
+struct digData{
+  int timeRemain;
+  int x;
+  int y;
+  Field::Type oldBlockType;
+};
 
 class Player
 {
 public:
-	enum Direction { LEFT, UP, RIGHT, DOWN };
+	enum Action { LEFT, UP, RIGHT, DOWN, DIGLEFT, DIGRIGHT};
 	Player(Field &field);
 	bool tick(Field &);
-	void keyEvent(Direction);
+	void keyEvent(Action);
 	void updateBlocks(Field &field);
 	void testMovement(Field &field);
 private:
 	typedef std::list<std::pair<int, int> > Blocks;
 	Blocks blocks_;
-	Direction direction_;
+	Action action_;
 	bool updateFlag;
 	int playerX;
 	int playerY;
@@ -26,4 +36,6 @@ private:
 	int testY;
 	Field::Type oldBlockType;
 	Field::Type testBlockType;
+	struct digData trap[trapNum];
+	int trapIterator;
 };

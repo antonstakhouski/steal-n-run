@@ -7,11 +7,11 @@
 
 using namespace std;
 
+int Field::level = 1;
+
 Field::Field()
 {
   goldRemain = 0;
-  level = 0;
-  level++;
   string command = "../lode_decode/decode ../lode_decode/loderun.dat ";
   command += char(level + '0');
   command += " > ../level_map";

@@ -11,11 +11,10 @@ void Game::draw(Painter &p) const
 	field_.draw(p);
 }
 
-void Game::keyEvent(Player::Direction d)
+void Game::keyEvent(Player::Action d)
 {
 	player_.keyEvent(d);
 }
-
 
 void Game::tick()
 {

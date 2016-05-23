@@ -15,7 +15,7 @@ public:
   int playerX;
   int playerY;
   int goldRemain;
+  static int level;
 private:
-  int level;
   Type m_[HEIGHT][WIDTH];
 };

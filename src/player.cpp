@@ -12,6 +12,9 @@ Player::Player(Field &field)
   oldX = playerX;
   oldY = playerY;
   oldBlockType = Field::EMPTY;
+  for (int i = 0; i < trapNum; i++){
+    trap[i].timeRemain = -1;
+  }
 }
 
 void Player::updateBlocks(Field &field)
@@ -27,9 +30,9 @@ void Player::updateBlocks(Field &field)
   field.setBlock(Field::PLAYER, playerX, playerY);
 }
 
-void Player::keyEvent(Direction d)
+void Player::keyEvent(Action d)
 {
-  direction_ = d;
+  action_ = d;
   updateFlag = true;
 }
 
@@ -59,7 +62,30 @@ void Player::testMovement(Field &field)
 
 bool Player::tick(Field &field)
 {
-  //FIX: player can get stuck
+  //close trap
+  for (trapIterator = 0; trapIterator < trapNum; trapIterator++){
+    if (trap[trapIterator].timeRemain > 0)
+      trap[trapIterator].timeRemain--;
+    if (trap[trapIterator].timeRemain == 0){
+      field.setBlock(trap[trapIterator].oldBlockType,
+       trap[trapIterator].x, trap[trapIterator].y);
+      trap[trapIterator].timeRemain--;
+      //if player is in a trap
+      if (playerX == trap[trapIterator].x && 
+        playerY == trap[trapIterator].y)
+        return false;
+    }
+  }
+
+  //jump to the next level
+  if(field.goldRemain == 0 && 
+    oldBlockType == Field::LADDER && 
+    playerY == 0)
+  {
+    Field::level++;
+    return false;
+  }
+
   if (
     (
       field.getBlock(playerX, playerY + 1) == Field::EMPTY ||
@@ -77,8 +103,49 @@ bool Player::tick(Field &field)
 
   if (updateFlag == true){
     updateFlag = false;
-    switch (direction_)
+    switch (action_)
     {
+      case DIGLEFT:
+      if (field.getBlock(playerX - 1, playerY + 1) != Field::BRICK)
+        break;
+      else{
+        //find free trap
+        for (trapIterator = 0; trapIterator < trapNum; trapIterator++){
+          if (trap[trapIterator].timeRemain == -1)
+            break;
+        }
+        //if all traps are busy
+        if (trapIterator == trapNum)
+          break;
+        //set trap
+        trap[trapIterator].timeRemain = trapUpdate;
+        trap[trapIterator].oldBlockType = field.getBlock(playerX - 1, playerY + 1);
+        trap[trapIterator].x = playerX - 1;
+        trap[trapIterator].y = playerY + 1;
+        field.setBlock(Field::EMPTY, playerX - 1, playerY + 1);
+        break;
+      }
+      case DIGRIGHT:
+      if (field.getBlock(playerX + 1, playerY + 1) != Field::BRICK)
+        break;
+      else{
+        //find free trap
+        for (trapIterator = 0; trapIterator < trapNum; trapIterator++){
+          if (trap[trapIterator].timeRemain == -1)
+            break;
+        }
+        //if all traps are busy
+        if (trapIterator == trapNum)
+          break;
+        //set trap
+        trap[trapIterator].timeRemain = trapUpdate;
+        trap[trapIterator].oldBlockType = field.getBlock(playerX + 1, playerY + 1);
+        trap[trapIterator].x = playerX + 1;
+        trap[trapIterator].y = playerY + 1;
+        field.setBlock(Field::EMPTY, playerX + 1, playerY + 1);
+        break;
+      }
+      break; 
       case LEFT:
       testX = playerX;
       testY = playerY;

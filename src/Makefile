@@ -1,12 +1,18 @@
-CPPFLAGS=-Wall -g
-OBJECTS=main.o painter.o field.o player.o game.o
-TARGET=steal-n-run
-%.o: %.cpp
-	g++ -c $(CPPFLAGS) -o $@ $<
-$(TARGET): $(OBJECTS)
-	g++ $(OBJECTS) -o $(TARGET) -g -lpthread -lglut -lGL
+OBJECTS = main.o painter.o field.o player.o game.o
+FLAGS = -c -lglut -lGL -Wall -pedantic
+CC = g++
+
+steal-n-run: $(OBJECTS)
+	$(CC) $(OBJECTS) -o steal-n-run -lglut -lGL
 main.o: main.cpp painter.hpp field.hpp
+	$(CC) $(FLAGS) main.cpp
 painter.o: painter.cpp painter.hpp
+	$(CC) $(FLAGS) painter.cpp
 field.o: field.cpp field.hpp painter.hpp
+	$(CC) $(FLAGS) field.cpp
 player.o: player.cpp player.hpp field.hpp
+	$(CC) $(FLAGS) player.cpp
 game.o: game.cpp game.hpp painter.hpp field.hpp player.hpp
+	$(CC) $(FLAGS) game.cpp
+clean:
+	rm -rf *.o steal-n-run
