@@ -59,6 +59,30 @@ bool Enemy::testMovement(Field &field)
 
 bool Enemy::tick(Field &field)
 {
+	//close trap
+	for (trapIterator = 0; trapIterator < trapNum; trapIterator++){
+		if (Player::trap[trapIterator].timeRemain > 0)
+			Player::trap[trapIterator].timeRemain--;
+		if (Player::trap[trapIterator].timeRemain == 0){
+			if (field.getBlock(Player::trap[trapIterator].x,
+				Player::trap[trapIterator].y) == Field::ENEMY &&
+				enemyX != Player::trap[trapIterator].x &&
+				enemyY != Player::trap[trapIterator].y)
+				break;
+			//if enemy is in a trap
+			if (enemyX == Player::trap[trapIterator].x && 
+				enemyY == Player::trap[trapIterator].y)
+			{
+				enemyY--;
+				field.setBlock(Player::trap[trapIterator].oldBlockType,
+					Player::trap[trapIterator].x, Player::trap[trapIterator].y);
+				Player::trap[trapIterator].timeRemain--;
+				//field.setBlock(Field::ENEMY, enemyX, enemyY);
+			}
+			
+		}
+	}
+
 	//falling
 	if (
 		(

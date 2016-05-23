@@ -2,10 +2,12 @@
 
 int Player::playerX = 0;
 int Player::playerY = 0;
+struct digData* Player::trap = 0;
 
 Player::Player(Field &field)
 {
   //remember start player pos
+  trap = new digData[3];
   updateFlag = false;
   playerX = field.playerX;
   playerY = field.playerY;
@@ -16,6 +18,11 @@ Player::Player(Field &field)
   for (int i = 0; i < trapNum; i++){
     trap[i].timeRemain = -1;
   }
+}
+
+void Player::deleteTrap()
+{
+  delete [] trap;
 }
 
 void Player::updateBlocks(Field &field)
@@ -89,17 +96,10 @@ bool Player::tick(Field &field)
 {
   //close trap
   for (trapIterator = 0; trapIterator < trapNum; trapIterator++){
-    if (trap[trapIterator].timeRemain > 0)
-      trap[trapIterator].timeRemain--;
-    if (trap[trapIterator].timeRemain == 0){
-      field.setBlock(trap[trapIterator].oldBlockType,
-       trap[trapIterator].x, trap[trapIterator].y);
-      trap[trapIterator].timeRemain--;
       //if player is in a trap
-      if (playerX == trap[trapIterator].x && 
-        playerY == trap[trapIterator].y)
-        return false;
-    }
+    if (playerX == trap[trapIterator].x && 
+      playerY == trap[trapIterator].y)
+      return false;
   }
 
   //jump to the next level

@@ -18,6 +18,7 @@ class Player
 public:
 	enum Action { LEFT, UP, RIGHT, DOWN, DIGLEFT, DIGRIGHT};
 	Player(Field &field);
+	void deleteTrap();
 	bool tick(Field &);
 	void keyEvent(Action);
 	void updateBlocks(Field &field);
@@ -25,6 +26,7 @@ public:
 	void setTrap(Field &field);
 	static int playerX;
 	static int playerY;
+	static struct digData* trap;
 private:
 	Action action_;
 	bool updateFlag;
@@ -34,6 +36,5 @@ private:
 	int testY;
 	Field::Type oldBlockType;
 	Field::Type testBlockType;
-	struct digData trap[trapNum];
 	int trapIterator;
 };

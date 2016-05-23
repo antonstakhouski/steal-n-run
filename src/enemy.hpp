@@ -25,4 +25,5 @@ private:
 	int testY;
 	Field::Type oldBlockType;
 	Field::Type testBlockType;
+	int trapIterator;
 };

@@ -35,6 +35,7 @@ void Game::enemyTick()
 				enemies.push_back(*enemy);
 				delete enemy;
 			}
+			player_.deleteTrap();
 			player_ = Player(field_);
 			return;
 		}
@@ -59,6 +60,7 @@ void Game::tick()
 	if (!player_.tick(field_))
 	{
 		field_ = Field();
+		player_.deleteTrap();
 		player_ = Player(field_);
 	}
 }
