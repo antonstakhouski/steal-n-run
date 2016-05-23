@@ -42,7 +42,8 @@ bool Enemy::testMovement(Field &field)
 	testBlockType = field.getBlock(testX, testY);
 	if (
 		testBlockType == Field::BRICK ||
-		testBlockType == Field::CONCRETE
+		testBlockType == Field::CONCRETE||
+		testBlockType == Field::ENEMY
 		)
 	{
 		return false;
@@ -58,8 +59,24 @@ bool Enemy::testMovement(Field &field)
 
 bool Enemy::tick(Field &field)
 {
+	//falling
+	if (
+		(
+			field.getBlock(enemyX, enemyY + 1) == Field::EMPTY ||
+			field.getBlock(enemyX, enemyY + 1) == Field::BRICK2 ||
+			field.getBlock(enemyX, enemyY + 1) == Field::LADDER2) && 
+		(oldBlockType != Field::POLE)
+		)
+	{
+		testX = enemyX;
+		testY = enemyY + 1;
+		testMovement(field);
+		return true;
+	}
+
 	testX = enemyX;
 	testY = enemyY;
+
 	//go to player quickly
 	if (abs(Player::playerX - enemyX) <
 		abs(Player::playerY - enemyY))
@@ -77,10 +94,17 @@ bool Enemy::tick(Field &field)
 		//check testMove at first
 		if (testMovement(field) == false){
 			testX = enemyX;
-			if (Player::playerY - enemyY >= 0)
+			if (Player::playerY - enemyY >= 0){
 				testY++;
-			else
+			}
+			else{
 				testY--;
+				if (
+					(oldBlockType != Field::LADDER) &&
+					(field.getBlock(testX, testY) == Field::EMPTY)
+					)
+					return true;
+			}
 
 			testBlockType = field.getBlock(testX, testY);
 			if (testBlockType == Field::PLAYER){
@@ -93,10 +117,21 @@ bool Enemy::tick(Field &field)
 	}
 	else
 	{
-		if (Player::playerY - enemyY >= 0)
+		if (Player::playerY - enemyY >= 0){
 			testY++;
-		else
+		}
+		else{
 			testY--;
+			testBlockType = field.getBlock(testX, testY);
+			if (testBlockType == Field::PLAYER){
+				return false;
+			}
+			if (
+				(oldBlockType != Field::LADDER) &&
+				(field.getBlock(testX, testY) == Field::EMPTY)
+				)
+				goto IFHIGH;
+		}
 
 		testBlockType = field.getBlock(testX, testY);
 		if (testBlockType == Field::PLAYER){
@@ -105,6 +140,7 @@ bool Enemy::tick(Field &field)
 
 		//check testMove at first
 		if (testMovement(field) == false){
+			IFHIGH:
 			testY = enemyY;
 			if (Player::playerX - enemyX >= 0)
 				testX++;

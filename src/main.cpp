@@ -15,7 +15,7 @@ void display()
 
 void enemy_timer(int = 0){
   game.enemyTick();
-  glutTimerFunc(200, enemy_timer, 0);
+  glutTimerFunc(300, enemy_timer, 0);
 }
 
 void timer(int = 0)

@@ -142,7 +142,6 @@ bool Player::tick(Field &field)
       break;
 
       case LEFT:
-      testX = playerX;
       testY = playerY;
       testX = playerX - 1;
       testMovement(field);
@@ -150,7 +149,6 @@ bool Player::tick(Field &field)
 
       case UP:
       testX = playerX;
-      testY = playerY;
       testY = playerY - 1;
       //"fly" and "jump" fix
       if (
@@ -162,7 +160,6 @@ bool Player::tick(Field &field)
       break;
 
       case RIGHT:
-      testX = playerX;
       testY = playerY;
       testX = playerX + 1;
       testMovement(field);
@@ -170,7 +167,6 @@ bool Player::tick(Field &field)
       case DOWN:
 
       testX = playerX;
-      testY = playerY;
       testY = playerY + 1;
       testMovement(field);
       break;
