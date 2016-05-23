@@ -17,7 +17,7 @@ void timer(int = 0)
 {
   game.tick();
   display();
-  glutTimerFunc(300, timer, 0);
+  glutTimerFunc(100, timer, 0);
 }
 
 void keyEvent(int key, int, int)

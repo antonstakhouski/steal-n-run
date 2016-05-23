@@ -18,6 +18,10 @@ void Player::updateBlocks(Field &field)
 {
   field.setBlock(oldBlockType, oldX, oldY);
   oldBlockType = field.getBlock(playerX, playerY);
+  if (oldBlockType == Field::GOLD){
+    oldBlockType = Field::EMPTY;
+    field.goldRemain--;
+  }
   oldX = playerX;
   oldY = playerY;
   field.setBlock(Field::PLAYER, playerX, playerY);
@@ -29,54 +33,83 @@ void Player::keyEvent(Direction d)
   updateFlag = true;
 }
 
+void Player::testMovement(Field &field)
+{
+  if (
+    testX >= Field::WIDTH || testX < 0 ||
+    testY >= Field::HEIGHT || testY < 0)
+    return;
+
+  testBlockType = field.getBlock(testX, testY);
+  if (
+    testBlockType == Field::BRICK ||
+    testBlockType == Field::CONCRETE ||
+    testBlockType == Field::ENEMY)
+  {
+    return;
+  }
+  else
+  {
+    playerX = testX;
+    playerY = testY;
+    updateBlocks(field);
+    return;
+  }
+}
+
 bool Player::tick(Field &field)
 {
+  //FIX: player can get stuck
+  if (
+    (
+      field.getBlock(playerX, playerY + 1) == Field::EMPTY ||
+      field.getBlock(playerX, playerY + 1) == Field::BRICK2 ||
+      field.getBlock(playerX, playerY + 1) == Field::LADDER2) && 
+    (oldBlockType != Field::POLE)
+    )
+  {
+    updateFlag = false;
+    testX = playerX;
+    testY = playerY + 1;
+    testMovement(field);
+    return true;
+  }
+
   if (updateFlag == true){
+    updateFlag = false;
     switch (direction_)
     {
       case LEFT:
-      playerX--;
-      updateBlocks(field);
+      testX = playerX;
+      testY = playerY;
+      testX = playerX - 1;
+      testMovement(field);
       break;
       case UP:
-      playerY--;
-      updateBlocks(field);
+      testX = playerX;
+      testY = playerY;
+      testY = playerY - 1;
+      //"fly" and "jump" fix
+      if (
+        (oldBlockType != Field::LADDER) &&
+        (field.getBlock(testX, testY) == Field::EMPTY)
+        )
+        return true;
+      testMovement(field);
       break;
       case RIGHT:
-      playerX++;
-      updateBlocks(field);
+      testX = playerX;
+      testY = playerY;
+      testX = playerX + 1;
+      testMovement(field);
       break;
       case DOWN:
-      playerY++;
-      updateBlocks(field);
+      testX = playerX;
+      testY = playerY;
+      testY = playerY + 1;
+      testMovement(field);
       break;
     }
-    updateFlag = false;
   }
   return true;    
 }
-  /*std::pair<int, int> p = blocks_.front();
-  if (p.first < 0 || 
-    p.first >= Field::WIDTH ||
-    p.second < 0 || 
-    p.second >= Field::HEIGHT)
-    return false;
-  if (field.block(p.first, p.second) == 
-    Field::PLAYER)
-    return false;
-  blocks_.push_front(p);*/
-/*  if (field.block(p.first, p.second) != 
-      Field::FRUIT)
-  {*/
-     /* field.setBlock(Field::PLAYER, p.first, p.second);
-      p = blocks_.back();
-      field.setBlock(field.m_[p.second][p.first], p.first, p.second);
-      blocks_.pop_back();*/
-  /*}
-  else
-  {
-    field.setBlock(Field::Player_BLOCK, p.first, p.second);
-    field.newFruit();
-  }*/
-    /*if (blocks_.size() >= Field::WIDTH * Field::HEIGHT - 1)
-      return false;*/

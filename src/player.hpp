@@ -12,6 +12,7 @@ public:
 	bool tick(Field &);
 	void keyEvent(Direction);
 	void updateBlocks(Field &field);
+	void testMovement(Field &field);
 private:
 	typedef std::list<std::pair<int, int> > Blocks;
 	Blocks blocks_;
@@ -21,5 +22,8 @@ private:
 	int playerY;
 	int oldX;
 	int oldY;
+	int testX;
+	int testY;
 	Field::Type oldBlockType;
+	Field::Type testBlockType;
 };

@@ -9,6 +9,7 @@ using namespace std;
 
 Field::Field()
 {
+  goldRemain = 0;
   level = 0;
   level++;
   string command = "../lode_decode/decode ../lode_decode/loderun.dat ";
@@ -43,6 +44,7 @@ Field::Field()
     }
     if (c == 'G'){
       m_[y][x] = GOLD;
+      goldRemain++;
       continue;
     }
     if (c == '1'){

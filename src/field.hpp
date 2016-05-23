@@ -14,6 +14,7 @@ public:
   void draw(Painter &) const;
   int playerX;
   int playerY;
+  int goldRemain;
 private:
   int level;
   Type m_[HEIGHT][WIDTH];
