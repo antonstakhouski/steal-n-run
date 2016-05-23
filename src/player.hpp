@@ -23,9 +23,8 @@ public:
 	void keyEvent(Action);
 	void updateBlocks(Field &field);
 	void testMovement(Field &field);
+	void setTrap(Field &field);
 private:
-	typedef std::list<std::pair<int, int> > Blocks;
-	Blocks blocks_;
 	Action action_;
 	bool updateFlag;
 	int playerX;
