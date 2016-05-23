@@ -1,6 +1,5 @@
 #include "field.hpp"
 #include "painter.hpp"
-#include <cstdlib>
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -8,6 +7,7 @@
 using namespace std;
 
 int Field::level = 1;
+
 
 Field::Field()
 {
@@ -67,11 +67,13 @@ Field::Field()
     }
     if (c == '4'){
       m_[y][x] = ENEMY;
+      xvec.push_back(x);
+      yvec.push_back(y);
       continue;
     }
   }
 }
-  fin.close();
+fin.close();
 }
 
 void Field::setBlock(Type type, int x, int y)

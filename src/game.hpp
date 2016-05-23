@@ -1,6 +1,8 @@
 #pragma once
 #include "player.hpp"
+#include "enemy.hpp"
 #include "field.hpp"
+#include <vector>
 
 class Painter;
 
@@ -14,4 +16,5 @@ public:
 private:
   Field field_;
   Player player_;
+  std::vector<Enemy> enemies;
 };

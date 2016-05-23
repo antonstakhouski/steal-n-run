@@ -1,5 +1,4 @@
 #pragma once
-#include <list>
 #include "field.hpp"
 
 #define trapNum 3

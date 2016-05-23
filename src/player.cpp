@@ -1,6 +1,4 @@
 #include "player.hpp"
-//#include "field.hpp"
-#include <cstdlib>
 
 Player::Player(Field &field)
 {
@@ -167,7 +165,7 @@ bool Player::tick(Field &field)
       testMovement(field);
       break;
       case DOWN:
-      
+
       testX = playerX;
       testY = playerY;
       testY = playerY + 1;
