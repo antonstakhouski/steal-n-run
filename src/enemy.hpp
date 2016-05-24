@@ -14,16 +14,14 @@ public:
 	enum Action { LEFT, UP, RIGHT, DOWN };
 	void updateBlocks(Field &field);
 	bool testMovement(Field &field);
-private:
-	Action actionX_;
-	Action actionY_;
-	int enemyX;
-	int enemyY;
+	Field::Type oldBlockType;
 	int oldX;
 	int oldY;
+	int enemyX;
+	int enemyY;
+	bool updateFlag;
+private:
 	int testX;
 	int testY;
-	Field::Type oldBlockType;
 	Field::Type testBlockType;
-	int trapIterator;
 };

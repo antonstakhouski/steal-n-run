@@ -57,10 +57,17 @@ void Game::tick()
 		}
 	}
 
-	if (!player_.tick(field_))
+	if (!player_.tick(field_, enemies))
 	{
-		field_ = Field();
+		enemies.clear();
 		player_.deleteTrap();
+		field_ = Field();
+		Enemy *enemy;
+		for (unsigned int i = 0; i < field_.xvec.size(); i++){
+			enemy = new Enemy(field_.xvec[i], field_.yvec[i]);
+			enemies.push_back(*enemy);
+			delete enemy;
+		}
 		player_ = Player(field_);
 	}
 }

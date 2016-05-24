@@ -8,16 +8,7 @@ Enemy::Enemy(int x, int y)
 	oldBlockType = Field::EMPTY;
 	oldX = enemyX;
 	oldY = enemyY;
-
-	if(enemyX < Player::playerX)
-		actionX_ = RIGHT;
-	else
-		actionX_ = LEFT;
-
-	if(enemyY < Player::playerY)
-		actionY_ = DOWN;
-	else
-		actionY_ = UP;
+	updateFlag = true;
 }
 
 void Enemy::updateBlocks(Field &field)
@@ -59,37 +50,19 @@ bool Enemy::testMovement(Field &field)
 
 bool Enemy::tick(Field &field)
 {
-	//close trap
-	for (trapIterator = 0; trapIterator < trapNum; trapIterator++){
-		if (Player::trap[trapIterator].timeRemain > 0)
-			Player::trap[trapIterator].timeRemain--;
-		if (Player::trap[trapIterator].timeRemain == 0){
-			if (field.getBlock(Player::trap[trapIterator].x,
-				Player::trap[trapIterator].y) == Field::ENEMY &&
-				enemyX != Player::trap[trapIterator].x &&
-				enemyY != Player::trap[trapIterator].y)
-				break;
-			//if enemy is in a trap
-			if (enemyX == Player::trap[trapIterator].x && 
-				enemyY == Player::trap[trapIterator].y)
-			{
-				enemyY--;
-				field.setBlock(Player::trap[trapIterator].oldBlockType,
-					Player::trap[trapIterator].x, Player::trap[trapIterator].y);
-				Player::trap[trapIterator].timeRemain--;
-				//field.setBlock(Field::ENEMY, enemyX, enemyY);
-			}
-			
-		}
-	}
+	if (updateFlag == false)
+		return true;
 
 	//falling
+	testBlockType = field.getBlock(enemyX, enemyY + 1);
 	if (
 		(
-			field.getBlock(enemyX, enemyY + 1) == Field::EMPTY ||
-			field.getBlock(enemyX, enemyY + 1) == Field::BRICK2 ||
-			field.getBlock(enemyX, enemyY + 1) == Field::LADDER2) && 
-		(oldBlockType != Field::POLE)
+			testBlockType == Field::EMPTY ||
+			testBlockType == Field::BRICK2 ||
+			testBlockType == Field::LADDER2||
+			testBlockType == Field::POLE ||
+			testBlockType == Field::GOLD) && 
+		oldBlockType != Field::POLE
 		)
 	{
 		testX = enemyX;

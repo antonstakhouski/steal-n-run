@@ -71,7 +71,8 @@ void Player::testMovement(Field &field)
 void Player::setTrap(Field &field)
 {
   testY = playerY + 1;
-  if (field.getBlock(testX, testY) != Field::BRICK)
+  if (field.getBlock(testX, testY) != Field::BRICK || 
+    field.getBlock(testX, testY - 1) == Field::LADDER)
     return;
   else{
     //find free trap
@@ -92,14 +93,50 @@ void Player::setTrap(Field &field)
   }
 }
 
-bool Player::tick(Field &field)
+bool Player::tick(Field &field, std::vector<Enemy> &enemies)
 {
-  //close trap
+    //close trap
   for (trapIterator = 0; trapIterator < trapNum; trapIterator++){
-      //if player is in a trap
-    if (playerX == trap[trapIterator].x && 
-      playerY == trap[trapIterator].y)
-      return false;
+    //reduce remainTime
+    if (Player::trap[trapIterator].timeRemain > 0)
+      Player::trap[trapIterator].timeRemain--;
+
+    //if is goin to close
+    if (Player::trap[trapIterator].timeRemain == 0){
+    //player is in a trap
+      Player::trap[trapIterator].timeRemain--;
+      if (playerX == trap[trapIterator].x && 
+        playerY == trap[trapIterator].y)
+        return false;
+
+      //search for enemies
+      for(unsigned int i = 0; i < enemies.size();i++){
+        if (enemies[i].enemyX == trap[trapIterator].x && 
+          enemies[i].enemyY == trap[trapIterator].y)
+        {
+          //fix this in future
+          //cause this this can be LADDER
+          //or enemy can be on the top of the trap
+          enemies[i].updateFlag = false;
+          field.setBlock(Field::BRICK, trap[trapIterator].x, 
+            trap[trapIterator].y);
+          enemies[i].oldBlockType = Field::EMPTY;
+          enemies[i].enemyY--;
+          enemies[i].oldX = enemies[i].enemyX;
+          enemies[i].oldY = enemies[i].enemyY;
+          field.setBlock(Field::ENEMY, enemies[i].enemyX, 
+            enemies[i].enemyY);
+          enemies[i].updateFlag = true;
+          goto retToTrapCheck;
+        }
+      }
+
+      //if trap is empty
+      field.setBlock(Field::BRICK, trap[trapIterator].x, 
+        trap[trapIterator].y);   
+    }
+    retToTrapCheck:
+    (void)trapIterator;
   }
 
   //jump to the next level
@@ -112,11 +149,14 @@ bool Player::tick(Field &field)
   }
 
   //falling
+  testBlockType = field.getBlock(playerX, playerY + 1);
   if (
     (
-      field.getBlock(playerX, playerY + 1) == Field::EMPTY ||
-      field.getBlock(playerX, playerY + 1) == Field::BRICK2 ||
-      field.getBlock(playerX, playerY + 1) == Field::LADDER2) && 
+      testBlockType == Field::EMPTY ||
+      testBlockType == Field::BRICK2 ||
+      testBlockType == Field::LADDER2 ||
+      testBlockType == Field::POLE ||
+      testBlockType == Field::GOLD) && 
     (oldBlockType != Field::POLE)
     )
   {
@@ -172,5 +212,5 @@ bool Player::tick(Field &field)
       break;
     }
   }
-  return true;    
+  return true;
 }

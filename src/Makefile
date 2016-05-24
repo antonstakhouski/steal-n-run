@@ -10,7 +10,7 @@ painter.o: painter.cpp painter.hpp
 	$(CC) $(FLAGS) painter.cpp
 field.o: field.cpp field.hpp painter.hpp enemy.hpp
 	$(CC) $(FLAGS) field.cpp
-player.o: player.cpp player.hpp field.hpp
+player.o: player.cpp player.hpp field.hpp enemy.hpp
 	$(CC) $(FLAGS) player.cpp
 game.o: game.cpp game.hpp painter.hpp field.hpp player.hpp enemy.hpp
 	$(CC) $(FLAGS) game.cpp
