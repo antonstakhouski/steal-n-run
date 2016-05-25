@@ -26,7 +26,7 @@ void Game::keyEvent(Player::Action d)
 void Game::enemyTick()
 {
 	for (unsigned int i = 0; i < field_.xvec.size(); i++){
-		if(!enemies[i].tick(field_)){
+		if(!enemies[i].tick(field_, player_)){
 			enemies.clear();
 			field_ = Field();
 			Enemy *enemy;

@@ -1,7 +1,9 @@
 #pragma once
-#include "field.hpp"
+
 #include <vector>
+#include "field.hpp"
 #include "enemy.hpp"
+#include "creature.hpp"
 
 #define trapNum 3
 #define trapUpdate 15
@@ -16,28 +18,19 @@ struct digData{
 	Field::Type oldBlockType;
 };
 
-class Player
+class Player : public Creature
 {
 public:
+	~Player();
 	enum Action { LEFT, UP, RIGHT, DOWN, DIGLEFT, DIGRIGHT};
 	Player(Field &field);
 	void deleteTrap();
 	bool tick(Field &, std::vector<Enemy> &);
 	void keyEvent(Action);
-	void updateBlocks(Field &field);
-	void testMovement(Field &field);
 	void setTrap(Field &field);
-	static int playerX;
-	static int playerY;
-	static struct digData* trap;
+	bool checkTraps(Field &, std::vector<Enemy> &);
 private:
+	struct digData* trap;
 	Action action_;
-	bool updateFlag;
-	int oldX;
-	int oldY;
-	int testX;
-	int testY;
-	Field::Type oldBlockType;
-	Field::Type testBlockType;
 	int trapIterator;
 };

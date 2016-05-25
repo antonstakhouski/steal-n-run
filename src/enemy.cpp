@@ -1,155 +1,99 @@
 #include "enemy.hpp"
 #include <cstdlib>
 
-Enemy::Enemy(int x, int y)
+Enemy::~Enemy(){}
+
+Enemy::Enemy(int xVal, int yVal)
 {
-	enemyX = x;
-	enemyY = y;
-	oldBlockType = Field::EMPTY;
-	oldX = enemyX;
-	oldY = enemyY;
-	updateFlag = true;
+	setX(xVal);
+	setY(yVal);
+	setOldBlockType(Field::EMPTY);
+	setOldX(getX());
+	setOldY(getY());
+	setUpdateFlag(true);
 }
 
-void Enemy::updateBlocks(Field &field)
+bool Enemy::playerCatched(Field &field)
 {
-	field.setBlock(oldBlockType, oldX, oldY);
-	oldBlockType = field.getBlock(enemyX, enemyY);
-	oldX = enemyX;
-	oldY = enemyY;
-	field.setBlock(Field::ENEMY, enemyX, enemyY);
-}
-
-bool Enemy::testMovement(Field &field)
-{
-	if (
-		testX >= Field::WIDTH || testX < 0 ||
-		testY >= Field::HEIGHT || testY < 0)
-		return false;
-
-	testBlockType = field.getBlock(testX, testY + 1);
-/*	if (testBlockType == Field::EMPTY)
-		return false;*/
-	testBlockType = field.getBlock(testX, testY);
-	if (
-		testBlockType == Field::BRICK ||
-		testBlockType == Field::CONCRETE||
-		testBlockType == Field::ENEMY
-		)
-	{
-		return false;
+	setTestBlockType(field.getBlock(getTestX(), getTestY()));
+	if (getTestBlockType() == Field::PLAYER){
+		return true;
 	}
 	else
-	{
-		enemyX = testX;
-		enemyY = testY;
-		updateBlocks(field);
-		return true;
-	}
+		return false;
 }
 
-bool Enemy::tick(Field &field)
+bool Enemy::tick(Field &field, Player &player)
 {
-	if (updateFlag == false)
+	if (getUpdateFlag() == false)
 		return true;
 
-	//falling
-	testBlockType = field.getBlock(enemyX, enemyY + 1);
-	if (
-		(
-			testBlockType == Field::EMPTY ||
-			testBlockType == Field::BRICK2 ||
-			testBlockType == Field::LADDER2||
-			testBlockType == Field::POLE ||
-			testBlockType == Field::GOLD) && 
-		oldBlockType != Field::POLE
-		)
-	{
-		testX = enemyX;
-		testY = enemyY + 1;
-		testMovement(field);
+	if (fallTest(field, Field::ENEMY) == true)
 		return true;
-	}
 
-	testX = enemyX;
-	testY = enemyY;
+	setTestX(getX());
+	setTestY(getY());
 
 	//go to player quickly
-	if (abs(Player::playerX - enemyX) <
-		abs(Player::playerY - enemyY))
+	if (abs(player.getX() - getX()) <
+		abs(player.getY() - getY()))
 	{
-		if (Player::playerX - enemyX >= 0)
-			testX++;
+		if (player.getX() - getX() >= 0)
+			setTestX(getTestX() + 1);
 		else
-			testX--;
+			setTestX(getTestX() - 1);
 
-		testBlockType = field.getBlock(testX, testY);
-		if (testBlockType == Field::PLAYER){
+		if(playerCatched(field) == true)
 			return false;
-		}
 
 		//check testMove at first
-		if (testMovement(field) == false){
-			testX = enemyX;
-			if (Player::playerY - enemyY >= 0){
-				testY++;
+		if (testMovement(field, Field::ENEMY) == false){
+			setTestX(getX());
+			if (player.getY() - getY() >= 0){
+				setTestY(getTestY() + 1);
 			}
 			else{
-				testY--;
-				if (
-					(oldBlockType != Field::LADDER) &&
-					(field.getBlock(testX, testY) == Field::EMPTY)
-					)
+				setTestY(getTestY() - 1);
+				if (jumpTest(field) == true)
 					return true;
 			}
 
-			testBlockType = field.getBlock(testX, testY);
-			if (testBlockType == Field::PLAYER){
+			if(playerCatched(field) == true)
 				return false;
-			}
 
-			testMovement(field);
+			testMovement(field, Field::ENEMY);
 		}
 		return true;
 	}
 	else
 	{
-		if (Player::playerY - enemyY >= 0){
-			testY++;
+		if (player.getY() - getY() >= 0){
+			setTestY(getTestY() + 1);
 		}
 		else{
-			testY--;
-			testBlockType = field.getBlock(testX, testY);
-			if (testBlockType == Field::PLAYER){
+			setTestY(getTestY() - 1);
+			if(playerCatched(field) == true)
 				return false;
-			}
-			if (
-				(oldBlockType != Field::LADDER) &&
-				(field.getBlock(testX, testY) == Field::EMPTY)
-				)
+			if (jumpTest(field) == true)
 				goto IFHIGH;
 		}
 
-		testBlockType = field.getBlock(testX, testY);
-		if (testBlockType == Field::PLAYER){
+		if(playerCatched(field) == true)
 			return false;
-		}
 
 		//check testMove at first
-		if (testMovement(field) == false){
+		if (testMovement(field, Field::ENEMY) == false){
 			IFHIGH:
-			testY = enemyY;
-			if (Player::playerX - enemyX >= 0)
-				testX++;
+			setTestY(getY());
+			if (player.getX() - getX() >= 0)
+				setTestX(getTestX() + 1);
 			else
-				testX--;
+				setTestX(getTestX() - 1);
 
-			testBlockType = field.getBlock(testX, testY);
-			if (testBlockType == Field::PLAYER){
+			if(playerCatched(field) == true)
 				return false;
-			}
 
-			testMovement(field);
+			testMovement(field, Field::ENEMY);
 		}
 		return true;
 	}
