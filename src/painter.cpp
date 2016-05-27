@@ -117,9 +117,12 @@ int Painter::imageLoad(char *filename, Image *image) {
     //reverse string order
     for (int i = 0; i < image->sizeY / 2; i++) {
     	for (int j = 0; j < image->sizeX; j++){
-    		temp = image->data[i * image->sizeX * 3 + j];
-    		image->data[i * image->sizeX * 3 + j] = image->data[(image->sizeY - 2 - i) * image->sizeX * 3 + j];
-    		image->data[(image->sizeY - 2 - i) * image->sizeX * 3 + j] = temp;
+    		for (int z = 0; z < 3; z++){
+    			temp = image->data[i * image->sizeX * 3 + j*3  + z];
+    			image->data[i * image->sizeX * 3 + j*3 +z] = 
+    			image->data[(image->sizeY - 2 - i) * image->sizeX * 3 + j*3 + z];
+    			image->data[(image->sizeY - 2 - i) * image->sizeX * 3 + j*3 + z] = temp;
+    		}
     	}
     }
 
