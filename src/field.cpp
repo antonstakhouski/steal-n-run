@@ -114,9 +114,12 @@ void Field::draw(Painter &p) const
         break;
 
         case BRICK:
-        p.square(x * BLOCK_WIDTH, y * BLOCK_HEIGHT,
+/*        p.square(x * BLOCK_WIDTH, y * BLOCK_HEIGHT,
           (x + 1) * BLOCK_WIDTH, (y + 1) * BLOCK_HEIGHT,
-          1, 0, 0);
+          1, 0, 0);*/
+        p.square2(x * BLOCK_WIDTH, y * BLOCK_HEIGHT,
+          (x + 1) * BLOCK_WIDTH, (y + 1) * BLOCK_HEIGHT,
+          0, 0, 1, 1);
         break;
 
         case GOLD:

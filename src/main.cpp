@@ -4,11 +4,11 @@
 #include "field.hpp"
 
 Game game;
+Painter p;
 
 void display()
 {
   glClear(GL_COLOR_BUFFER_BIT);
-  Painter p;
   game.draw(p);
   glutSwapBuffers();
 }
@@ -80,8 +80,9 @@ int main(int argc, char **argv)
   glutDisplayFunc(display);
   glutSpecialFunc(keyEvent);
   glutKeyboardFunc(keyEvent);
+  p.loadGLTextures();
+  glEnable(GL_TEXTURE_2D);
   timer();
   enemy_timer();
-
   glutMainLoop();
 }

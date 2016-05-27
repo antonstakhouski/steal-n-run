@@ -53,7 +53,9 @@ void Creature::updateBlocks(Field &field, Field::Type creatueType)
 {
 	field.setBlock(oldBlockType, oldX, oldY);
 	oldBlockType = field.getBlock(x, y);
-	if (oldBlockType == Field::GOLD){
+	if (oldBlockType == Field::GOLD && 
+		creatueType == Field::PLAYER)
+	{
 		oldBlockType = Field::EMPTY;
 		field.goldRemain--;
 	}
