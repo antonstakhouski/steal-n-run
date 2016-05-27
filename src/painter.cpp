@@ -7,19 +7,6 @@ Painter::Painter()
 {
 	strcpy(texPath, "../res/textures.bmp");
 	bitmapHeader = 14;
-	//loadGLTextures();
-}
-
-void Painter::square(int x1, int y1, int x2, int y2, float r, float g, float b)
-{
-
-	glColor3f(r, g , b);
-	glBegin(GL_QUADS);
-	glVertex2f(x1, y1);
-	glVertex2f(x2, y1);
-	glVertex2f(x2, y2);
-	glVertex2f(x1, y2);
-	glEnd();
 }
 
 // quick and dirty bitmap loader...for 24 bit bitmaps with 1 plane only.  
@@ -171,41 +158,45 @@ void Painter::loadGLTextures() {
 		exit(1);
 	}        
 
+	glEnable( GL_TEXTURE_RECTANGLE_NV );
     // Create Texture   
 	glGenTextures(1, &texture[0]);
-    glBindTexture(GL_TEXTURE_2D, texture[0]);   // 2d texture (x and y size)
+    glBindTexture(GL_TEXTURE_RECTANGLE_NV, texture[0]);   // 2d texture (x and y size)
 
-    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR); // scale linearly when image bigger than texture
-    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR); // scale linearly when image smalled than texture
+    glTexParameteri(GL_TEXTURE_RECTANGLE_NV, GL_TEXTURE_MAG_FILTER, GL_NEAREST); // scale linearly when image bigger than texture
+    glTexParameteri(GL_TEXTURE_RECTANGLE_NV, GL_TEXTURE_MIN_FILTER, GL_NEAREST); // scale linearly when image smalled than texture
 
     // 2d texture, level of detail 0 (normal), 3 components (red, green, blue), x size from image, y size from image, 
     // border 0 (normal), rgb color data, unsigned byte data, and finally the data itself.
-    glTexImage2D(GL_TEXTURE_2D, 0, 3, image1->sizeX, image1->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, image1->data);
+    glTexImage2D(GL_TEXTURE_RECTANGLE_NV, 0, 3, image1->sizeX, image1->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, image1->data);
+    glDisable( GL_TEXTURE_RECTANGLE_NV );
 }
 
 /* The main drawing function. */
-void Painter::square2(int x1, int y1, int x2, int y2, 
-	int texX1, int texY1, int texX2, int texY2)
+void Painter::square(int x1, int y1, int x2, int y2, 
+	int* startXY, int step)
 {
-/*    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);     // Clear The Screen And The Depth Buffer
-    glLoadIdentity();               // Reset The View
+    //white background
+	glColor3f( 1.0f, 1.0f, 1.0f );
+    glBindTexture(GL_TEXTURE_RECTANGLE_NV, texture[0]);   // choose the texture to use.
 
-    glTranslatef(0.0f,0.0f,-5.0f);              // move 5 units into the screen.*/
-
-    glBindTexture(GL_TEXTURE_2D, texture[0]);   // choose the texture to use.
-
+    glEnable(GL_TEXTURE_RECTANGLE_NV);
     glBegin(GL_QUADS);                      // begin drawing a cube
     
-    // Front Face (note that the texture's corners have to match the quad's corners)
-    glTexCoord2f(texX1, texY1); glVertex2f(x1, y1);  // Bottom Left Of The Texture and Quad
-    glTexCoord2f(texX2, texY1); glVertex2f(x2, y1);  // Bottom Right Of The Texture and Quad
-    glTexCoord2f(texX1, texY2); glVertex2f(x1, y2);  // Top Right Of The Texture and Quad
-    glTexCoord2f(texX2, texY2); glVertex2f(x2, y2);  // Top Left Of The Texture and Quad
+    //top left
+    glTexCoord2i(startXY[0], startXY[1]);
+    glVertex2f(x1, y1);  // Bottom Left Of The Texture and Quad
+    //top right
+    glTexCoord2i(startXY[0] + step, startXY[1]); 
+    glVertex2f(x2, y1);  // Bottom Right Of The Texture and Quad
+    //bottom right
+    glTexCoord2i(startXY[0] + step, startXY[1] + step); 
+    glVertex2f(x2, y2);  // Top Right Of The Texture and Quad
+    //bottom left
+    glTexCoord2i(startXY[0] , startXY[1] + step); 
+    glVertex2f(x1, y2);  // Top Left Of The Texture and Quad
 
-    /*glTexCoord2f(0.0f, 0.0f); glVertex2f(x1, y1);  // Bottom Left Of The Texture and Quad
-    glTexCoord2f(1.0f, 0.0f); glVertex2f(x2, y1);  // Bottom Right Of The Texture and Quad
-    glTexCoord2f(1.0f, 1.0f); glVertex2f(x1, y2);  // Top Right Of The Texture and Quad
-    glTexCoord2f(0.0f, 1.0f); glVertex2f(x2, y2);  // Top Left Of The Texture and Quad*/
-    
+
     glEnd();                                    // done with the polygon.
+    glDisable(GL_TEXTURE_RECTANGLE_NV);
 }

@@ -15,10 +15,7 @@ public:
 	Painter();
 	int imageLoad(char *filename, Image *image);
 	void loadGLTextures();
-	void square(int x1, int y1, int x2, int y2, float r, float g, float b);
-	void square2(int x1, int y1, int x2, int y2, 
-	int texX1, int texY1, int texX2, int texY2);
-	//void square(int x1, int y1, int x2, int y2, float r, float g, float b);
+	void square(int x1, int y1, int x2, int y2, int* startXY, int step);
 private:
 	/* storage for one texture  */
 	GLuint texture[1];

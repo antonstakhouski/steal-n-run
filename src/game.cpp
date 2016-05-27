@@ -13,7 +13,7 @@ Game::Game():field_(), player_(field_){
 	}
 }
 
-void Game::draw(Painter &p) const
+void Game::draw(Painter &p)
 {
 	field_.draw(p);
 }

@@ -81,7 +81,7 @@ int main(int argc, char **argv)
   glutSpecialFunc(keyEvent);
   glutKeyboardFunc(keyEvent);
   p.loadGLTextures();
-  glEnable(GL_TEXTURE_2D);
+  //glEnable(GL_TEXTURE_2D);
   timer();
   enemy_timer();
   glutMainLoop();

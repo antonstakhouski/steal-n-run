@@ -86,7 +86,14 @@ Field::Type Field::getBlock(int x, int y) const
   return m_[y][x];
 }
 
-void Field::draw(Painter &p) const
+void Field::drawBlock(int x, int y, Painter &p, int* startXY)
+{
+  p.square(x * BLOCK_WIDTH, y * BLOCK_HEIGHT,
+    (x + 1) * BLOCK_WIDTH, (y + 1) * BLOCK_HEIGHT,
+    startXY, step);
+}
+
+void Field::draw(Painter &p)
 {
   for (int y = 0; y < HEIGHT; ++y){
     for (int x = 0; x < WIDTH; ++x){
@@ -102,48 +109,31 @@ void Field::draw(Painter &p) const
         break;
 
         case LADDER:
-        p.square(x * BLOCK_WIDTH, y * BLOCK_HEIGHT,
-          (x + 1) * BLOCK_WIDTH, (y + 1) * BLOCK_HEIGHT,
-          0, 1, 0);
+        drawBlock(x, y, p, ladder);
         break;
 
         case CONCRETE:
-        p.square(x * BLOCK_WIDTH, y * BLOCK_HEIGHT,
-          (x + 1) * BLOCK_WIDTH, (y + 1) * BLOCK_HEIGHT,
-          0.255, 0.128, 0);
+        drawBlock(x, y, p, concrete);
         break;
 
         case BRICK:
-/*        p.square(x * BLOCK_WIDTH, y * BLOCK_HEIGHT,
-          (x + 1) * BLOCK_WIDTH, (y + 1) * BLOCK_HEIGHT,
-          1, 0, 0);*/
-        p.square2(x * BLOCK_WIDTH, y * BLOCK_HEIGHT,
-          (x + 1) * BLOCK_WIDTH, (y + 1) * BLOCK_HEIGHT,
-          0, 0, 1, 1);
+        drawBlock(x, y, p, brick);
         break;
 
         case GOLD:
-        p.square(x * BLOCK_WIDTH, y * BLOCK_HEIGHT,
-          (x + 1) * BLOCK_WIDTH, (y + 1) * BLOCK_HEIGHT,
-          1, 1, 0);
+        drawBlock(x, y, p, gold);
         break;
 
         case POLE:
-        p.square(x * BLOCK_WIDTH, y * BLOCK_HEIGHT,
-          (x + 1) * BLOCK_WIDTH, (y + 1) * BLOCK_HEIGHT,
-          1, 1, 1);
+        drawBlock(x, y, p, pole);
         break;
 
         case PLAYER:
-        p.square(x * BLOCK_WIDTH, y * BLOCK_HEIGHT,
-          (x + 1) * BLOCK_WIDTH, (y + 1) * BLOCK_HEIGHT,
-          0, 0, 1);
+        drawBlock(x, y, p, player);
         break;
 
         case ENEMY:
-        p.square(x * BLOCK_WIDTH, y * BLOCK_HEIGHT,
-          (x + 1) * BLOCK_WIDTH, (y + 1) * BLOCK_HEIGHT,
-          0.1, 0.3, 0.4);
+        drawBlock(x, y, p, enemy);
         break;
       }
     }

@@ -14,7 +14,7 @@ class Game
 public:
   void tick();
   void enemyTick();
-  void draw(Painter &) const;
+  void draw(Painter &);
   void keyEvent(Player::Action);
   Game();
 private:
