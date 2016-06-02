@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI verified="false" xmlns:UML="http://schema.omg.org/spec/UML/1.3" xmi.version="1.2" timestamp="2016-06-02T21:40:56">
+ <XMI.header>
+  <XMI.documentation>
+   <XMI.exporter>umbrello uml modeller http://umbrello.kde.org</XMI.exporter>
+   <XMI.exporterVersion>1.6.10</XMI.exporterVersion>
+   <XMI.exporterEncoding>UnicodeUTF8</XMI.exporterEncoding>
+  </XMI.documentation>
+  <XMI.metamodel href="UML.xml" xmi.name="UML" xmi.version="1.3"/>
+ </XMI.header>
+ <XMI.content>
+  <UML:Model isSpecification="false" name="Модель UML" xmi.id="m1" isRoot="false" isAbstract="false" isLeaf="false">
+   <UML:Namespace.ownedElement>
+    <UML:Stereotype isSpecification="false" visibility="public" name="folder" namespace="m1" xmi.id="folder" isRoot="false" isAbstract="false" isLeaf="false"/>
+    <UML:Stereotype isSpecification="false" visibility="public" name="datatype" namespace="m1" xmi.id="datatype" isRoot="false" isAbstract="false" isLeaf="false"/>
+    <UML:Stereotype isSpecification="false" visibility="public" name="constructor" namespace="m1" xmi.id="constructor" isRoot="false" isAbstract="false" isLeaf="false"/>
+    <UML:Stereotype isSpecification="false" visibility="public" name="class-or-package" namespace="m1" xmi.id="class-or-package" isRoot="false" isAbstract="false" isLeaf="false"/>
+    <UML:Stereotype isSpecification="false" visibility="public" name="typedef" namespace="m1" xmi.id="typedef" isRoot="false" isAbstract="false" isLeaf="false"/>
+    <UML:Model isSpecification="false" visibility="public" name="Logical View" namespace="m1" xmi.id="Logical View" isRoot="false" isAbstract="false" isLeaf="false">
+     <UML:Namespace.ownedElement>
+      <UML:Package isSpecification="false" visibility="public" name="Datatypes" namespace="Logical View" stereotype="folder" xmi.id="Datatypes" isRoot="false" isAbstract="false" isLeaf="false">
+       <UML:Namespace.ownedElement>
+        <UML:DataType isSpecification="false" visibility="public" name="int" namespace="Datatypes" stereotype="datatype" xmi.id="iG7iYiuSKKaT" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType isSpecification="false" visibility="public" name="char" namespace="Datatypes" stereotype="datatype" xmi.id="BnNud6ZwXt1Y" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType isSpecification="false" visibility="public" name="bool" namespace="Datatypes" stereotype="datatype" xmi.id="LIW3zHvxMVCx" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType isSpecification="false" visibility="public" name="float" namespace="Datatypes" stereotype="datatype" xmi.id="NmUlRlanMxpJ" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType isSpecification="false" visibility="public" name="double" namespace="Datatypes" stereotype="datatype" xmi.id="yiVucS6WpyND" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType isSpecification="false" visibility="public" name="short" namespace="Datatypes" stereotype="datatype" xmi.id="PdEBfqJdSMMl" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType isSpecification="false" visibility="public" name="long" namespace="Datatypes" stereotype="datatype" xmi.id="YAOQKZmbCIHV" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType isSpecification="false" visibility="public" name="unsigned int" namespace="Datatypes" stereotype="datatype" xmi.id="32JP8u1tt5Rd" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType isSpecification="false" visibility="public" name="unsigned short" namespace="Datatypes" stereotype="datatype" xmi.id="MfyzFBu3dNpN" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType isSpecification="false" visibility="public" name="unsigned long" namespace="Datatypes" stereotype="datatype" xmi.id="JEUYU9Yti88m" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType isSpecification="false" visibility="public" name="string" namespace="Datatypes" stereotype="datatype" xmi.id="bqDjK8MnOEZM" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType elementReference="oJcJyVvyjyvU" isSpecification="false" visibility="public" name="Field&amp;" namespace="Datatypes" stereotype="datatype" xmi.id="XscoSGVGouiy" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType elementReference="GDyrC26V8d2Y" isSpecification="false" visibility="public" name="Player&amp;" namespace="Datatypes" stereotype="datatype" xmi.id="t4LxB7z96463" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType elementReference="0YBnpwuilUPN" isSpecification="false" visibility="public" name="Painter&amp;" namespace="Datatypes" stereotype="datatype" xmi.id="3iFf7xXtRK6b" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType elementReference="iG7iYiuSKKaT" isSpecification="false" visibility="public" name="int*" namespace="Datatypes" stereotype="datatype" xmi.id="8ZZ1txiH0FFt" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType elementReference="NYqB6ivsMBwO" isSpecification="false" visibility="public" name="std::vector&lt; int >" namespace="Datatypes" stereotype="datatype" xmi.id="NX2NlzF1ypdz" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType elementReference="NYqB6ivsMBwO" isSpecification="false" visibility="public" name="std::vector&lt; Enemy >" namespace="Datatypes" stereotype="datatype" xmi.id="chyGHcWL1RZH" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType elementReference="ZxrvXddL8YrS" isSpecification="false" visibility="public" name="unsigned char*" namespace="Datatypes" stereotype="datatype" xmi.id="DsApWChi7FXW" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType elementReference="BnNud6ZwXt1Y" isSpecification="false" visibility="public" name="char*" namespace="Datatypes" stereotype="datatype" xmi.id="I4gSxBgJcaLt" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType elementReference="CZ0SOEDzpAxM" isSpecification="false" visibility="public" name="Image*" namespace="Datatypes" stereotype="datatype" xmi.id="Tt6t1fl66Zpd" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType elementReference="NYqB6ivsMBwO" isSpecification="false" visibility="public" name="std::vector&lt; Enemy >&amp;" namespace="Datatypes" stereotype="datatype" xmi.id="UxAu2vwQWA5V" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:DataType elementReference="H1QT1EoZyPXM" isSpecification="false" visibility="public" name="struct digData*" namespace="Datatypes" stereotype="datatype" xmi.id="OB2cFkOWmIuV" isRoot="false" isAbstract="false" isLeaf="false"/>
+       </UML:Namespace.ownedElement>
+      </UML:Package>
+      <UML:Class isSpecification="false" visibility="public" name="Creature" namespace="Logical View" xmi.id="MGjh7XTVOLf1" isRoot="false" isAbstract="false" isLeaf="false">
+       <UML:Classifier.feature>
+        <UML:Attribute isSpecification="false" visibility="private" name="x" type="iG7iYiuSKKaT" xmi.id="uNGQNgxvwsAY"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="y" type="iG7iYiuSKKaT" xmi.id="V3Z3Edhn0y5r"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="updateFlag" type="LIW3zHvxMVCx" xmi.id="K4CVlaB9GRhs"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="oldX" type="iG7iYiuSKKaT" xmi.id="k0hqRAqU5iQL"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="oldY" type="iG7iYiuSKKaT" xmi.id="3YoL8QjCrDCK"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="testX" type="iG7iYiuSKKaT" xmi.id="K3OAhE0qkcR1"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="testY" type="iG7iYiuSKKaT" xmi.id="VD0uqGMEhQMj"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="oldBlockType" type="QzNCRxSyHKkH" xmi.id="9ZiCwLqVq5nC"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="testBlockType" type="QzNCRxSyHKkH" xmi.id="P1HfiEzNwGEF"/>
+        <UML:Operation isSpecification="false" visibility="public" name="Creature" stereotype="constructor" xmi.id="EPUhalyDfI1U" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false"/>
+        <UML:Operation isSpecification="false" visibility="public" name="~ Creature" xmi.id="A1OiQRMMjRFN" isRoot="false" isQuery="false" isAbstract="true" isLeaf="false"/>
+        <UML:Operation isSpecification="false" visibility="public" name="testMovement" xmi.id="DbVeP5wQxMZM" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="LIW3zHvxMVCx" xmi.id="ITPHXCtFPGXh" kind="return"/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="XscoSGVGouiy" xmi.id="HFPlt7ebNs3h" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="QzNCRxSyHKkH" xmi.id="GFMF6eZYnllb" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="fallTest" xmi.id="zLVJ37XpWlvp" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="LIW3zHvxMVCx" xmi.id="blE8QwfUJQqy" kind="return"/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="XscoSGVGouiy" xmi.id="KK0HOotUoe8G" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="QzNCRxSyHKkH" xmi.id="DZ6byZfrCC4j" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="updateBlocks" xmi.id="PmLBpjN2nuqP" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="XscoSGVGouiy" xmi.id="3JuIiVu6ZbAq" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="QzNCRxSyHKkH" xmi.id="i4RgI08Lfyc9" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="jumpTest" xmi.id="nvk1JCE1nES5" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="LIW3zHvxMVCx" xmi.id="d3HmYkiYcsGA" kind="return"/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="XscoSGVGouiy" xmi.id="6qGK7aDEco5S" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="getX" comment="getters" xmi.id="Hut6DYYJxTNG" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="iG7iYiuSKKaT" xmi.id="RaAMLr2I75mb" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="getY" xmi.id="SPeafkZraTyw" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="iG7iYiuSKKaT" xmi.id="L5OwRI2FAUpy" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="getUpdateFlag" xmi.id="9zAg2gUY9oSF" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="LIW3zHvxMVCx" xmi.id="SfDaovemgbAa" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="getOldX" xmi.id="YUxCUhZmHPO7" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="iG7iYiuSKKaT" xmi.id="7sQY1n9mOnEG" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="getOldY" xmi.id="uC0qKs1HXfVQ" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="iG7iYiuSKKaT" xmi.id="ZAgvQk27i4ZG" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="getTestX" xmi.id="xFCDoojKHjBs" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="iG7iYiuSKKaT" xmi.id="nCidQoqs3lzb" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="getTestY" xmi.id="KM3e5yHcnw8E" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="iG7iYiuSKKaT" xmi.id="AqofXXqfjNR9" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="getOldBlockType" xmi.id="o6FNesn0DoIj" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="QzNCRxSyHKkH" xmi.id="6xZsslyQOXWF" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="getTestBlockType" xmi.id="2Wdv09uSJ80K" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="QzNCRxSyHKkH" xmi.id="2w1oMRerT8ML" kind="return"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="setX" comment="setters" xmi.id="aVkywZvapf9v" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="iG7iYiuSKKaT" xmi.id="IFGYWyuWpKsh" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="setY" xmi.id="QtyWW4bJmYPs" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="iG7iYiuSKKaT" xmi.id="A3YSszXrZYFz" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="setUpdateFlag" xmi.id="bCARjwlMDtjE" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="LIW3zHvxMVCx" xmi.id="3hF6kDZMzgaR" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="setOldX" xmi.id="COS1NF6M6s3N" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="iG7iYiuSKKaT" xmi.id="sjRyuAFtnZn3" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="setOldY" xmi.id="Pr7StZYNhsXe" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="iG7iYiuSKKaT" xmi.id="pgPB8AoDR2oi" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="setTestX" xmi.id="jyPecCcSbo9s" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="iG7iYiuSKKaT" xmi.id="FOzguOtSNbUc" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="setTestY" xmi.id="LcFNelZGwS7t" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="iG7iYiuSKKaT" xmi.id="oCE8hPgiRJ0O" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="setOldBlockType" xmi.id="JtDH5nyamI5f" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="QzNCRxSyHKkH" xmi.id="7Nhojsned10J" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="setTestBlockType" xmi.id="1zBYwRgNKqal" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="QzNCRxSyHKkH" xmi.id="5Vaj5sbU0FRb" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+       </UML:Classifier.feature>
+      </UML:Class>
+      <UML:Generalization isSpecification="false" visibility="public" name="" namespace="Logical View" xmi.id="uBHGOJM9NYzS" discriminator="" child="bngE4pWTalBJ" parent="MGjh7XTVOLf1"/>
+      <UML:Class isSpecification="false" visibility="public" name="std" namespace="Logical View" stereotype="class-or-package" xmi.id="54D53spx9AiF" isRoot="false" isAbstract="false" isLeaf="false">
+       <UML:Namespace.ownedElement>
+        <UML:Class isSpecification="false" visibility="public" name="vector" namespace="54D53spx9AiF" xmi.id="NYqB6ivsMBwO" isRoot="false" isAbstract="false" isLeaf="false"/>
+       </UML:Namespace.ownedElement>
+      </UML:Class>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="uBHGOJM9NYzS" xmi.id="IzZc8ldh0bfl" client="oJcJyVvyjyvU"/>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="uBHGOJM9NYzS" xmi.id="i9DJkkgmxvsi" client="oJcJyVvyjyvU"/>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="uBHGOJM9NYzS" xmi.id="MsyLr9faJsf8" client="oJcJyVvyjyvU"/>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="uBHGOJM9NYzS" xmi.id="gdBkg8yL0970" client="oJcJyVvyjyvU"/>
+      <UML:Class isSpecification="false" visibility="public" name="Game" namespace="Logical View" xmi.id="ZefgotNKqpTP" isRoot="false" isAbstract="false" isLeaf="false">
+       <UML:Classifier.feature>
+        <UML:Attribute isSpecification="false" visibility="private" name="field_" type="oJcJyVvyjyvU" xmi.id="XI5aB5G6K5Ao"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="player_" type="GDyrC26V8d2Y" xmi.id="bIoNltbAwbop"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="enemies" type="chyGHcWL1RZH" xmi.id="dL5G8azcUhum"/>
+        <UML:Operation isSpecification="false" visibility="public" name="tick" xmi.id="NsV1D5sHv8Gm" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false"/>
+        <UML:Operation isSpecification="false" visibility="public" name="enemyTick" xmi.id="wWQRuDDPMv3i" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false"/>
+        <UML:Operation isSpecification="false" visibility="public" name="draw" xmi.id="gBbCyNsUPjWp" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="3iFf7xXtRK6b" xmi.id="hxjVRQxy131h" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="keyEvent" xmi.id="rOjn1sH8k2Yx" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="XEVqpYi9md54" xmi.id="ENDCQ7qE6j8P" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="Game" stereotype="constructor" xmi.id="YstrlkYBaMW7" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false"/>
+       </UML:Classifier.feature>
+      </UML:Class>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="uBHGOJM9NYzS" xmi.id="4QYJpfO3QoJy" client="ZefgotNKqpTP"/>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="bngE4pWTalBJ" xmi.id="IEQhlnFnPGcd" client="ZefgotNKqpTP"/>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="uBHGOJM9NYzS" xmi.id="RR2H8vd5pMl2" client="ZefgotNKqpTP"/>
+      <UML:Class isSpecification="false" visibility="public" name="unsigned char" namespace="Logical View" xmi.id="ZxrvXddL8YrS" isRoot="false" isAbstract="false" isLeaf="false"/>
+      <UML:Class isSpecification="false" visibility="public" name="Image" namespace="Logical View" comment="Image type - contains height, width, and data " stereotype="typedef" xmi.id="CZ0SOEDzpAxM" isRoot="false" isAbstract="false" isLeaf="false">
+       <UML:Classifier.feature>
+        <UML:Attribute isSpecification="false" visibility="public" name="sizeX" type="iG7iYiuSKKaT" xmi.id="8FmQkviqrO8Z"/>
+        <UML:Attribute isSpecification="false" visibility="public" name="sizeY" type="iG7iYiuSKKaT" xmi.id="rjvcu9DcCQHS"/>
+        <UML:Attribute isSpecification="false" visibility="public" name="data" type="DsApWChi7FXW" xmi.id="EDFeiXkLVdw8"/>
+       </UML:Classifier.feature>
+      </UML:Class>
+      <UML:Class isSpecification="false" visibility="public" name="Painter" namespace="Logical View" xmi.id="0YBnpwuilUPN" isRoot="false" isAbstract="false" isLeaf="false">
+       <UML:Classifier.feature>
+        <UML:Attribute isSpecification="false" visibility="private" name="texture" type="ICAx0iLL5p0k" comment="storage for one texture  " xmi.id="HrOiGfTjutFV"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="texPath" type="BnNud6ZwXt1Y" xmi.id="YTgHi3DHAiyG"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="bitmapHeader" type="iG7iYiuSKKaT" xmi.id="wQW7ZvpyF07I"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="bitmapVersion" type="32JP8u1tt5Rd" xmi.id="amYZD5dFBrFu"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="height" type="iG7iYiuSKKaT" xmi.id="C6vH0hjojCzg"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="compression" type="32JP8u1tt5Rd" xmi.id="gDAtaVik3A8m"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="pixelDataOffset" type="32JP8u1tt5Rd" xmi.id="7n5OEWNpHoSy"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="sizeImage" type="32JP8u1tt5Rd" xmi.id="pviXQ2zyeaIj"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="bpp" type="yVAR0u9ERLi9" xmi.id="ggDRT1uDDA29"/>
+        <UML:Operation isSpecification="false" visibility="public" name="Painter" stereotype="constructor" xmi.id="ECdhTPtyOd5p" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false"/>
+        <UML:Operation isSpecification="false" visibility="public" name="imageLoad" xmi.id="jgoeBePgmHMw" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="iG7iYiuSKKaT" xmi.id="sl6i82k81RnK" kind="return"/>
+          <UML:Parameter isSpecification="false" visibility="private" name="filename" type="I4gSxBgJcaLt" xmi.id="ROlEfSauRuwq" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="image" type="Tt6t1fl66Zpd" xmi.id="bzUcwQiPqyTa" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="loadGLTextures" xmi.id="0c9DBfUo3QAD" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false"/>
+        <UML:Operation isSpecification="false" visibility="public" name="square" xmi.id="S03FsiSJROeM" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="x1" type="iG7iYiuSKKaT" xmi.id="eBjZJl6JFPgF" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="y1" type="iG7iYiuSKKaT" xmi.id="FNLKVSUpp5lQ" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="x2" type="iG7iYiuSKKaT" xmi.id="xeABdcnwTWz1" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="y2" type="iG7iYiuSKKaT" xmi.id="loiYoL7oosF3" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="startXY" type="8ZZ1txiH0FFt" xmi.id="7So6PGlOpI04" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="step" type="iG7iYiuSKKaT" xmi.id="MqyeRibyQ6Do" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+       </UML:Classifier.feature>
+      </UML:Class>
+      <UML:Class isSpecification="false" visibility="public" name="GLuint" namespace="Logical View" xmi.id="ICAx0iLL5p0k" isRoot="false" isAbstract="false" isLeaf="false"/>
+      <UML:Class isSpecification="false" visibility="public" name="unsigned short int" namespace="Logical View" xmi.id="yVAR0u9ERLi9" isRoot="false" isAbstract="false" isLeaf="false"/>
+      <UML:Class isSpecification="false" visibility="public" name="Field" namespace="Logical View" xmi.id="oJcJyVvyjyvU" isRoot="false" isAbstract="false" isLeaf="false">
+       <UML:Classifier.feature>
+        <UML:Attribute isSpecification="false" visibility="public" name="step" type="iG7iYiuSKKaT" xmi.id="GDeKtvTVf9Fo"/>
+        <UML:Attribute isSpecification="false" visibility="public" name="playerX" type="iG7iYiuSKKaT" xmi.id="0uZixMiuY5Rh"/>
+        <UML:Attribute isSpecification="false" visibility="public" name="playerY" type="iG7iYiuSKKaT" xmi.id="unkLOhJY5WmR"/>
+        <UML:Attribute isSpecification="false" visibility="public" name="goldRemain" type="iG7iYiuSKKaT" xmi.id="C3UshvX3smRt"/>
+        <UML:Attribute isSpecification="false" visibility="public" name="level" ownerScope="classifier" type="iG7iYiuSKKaT" xmi.id="x5FmfXXNvdZ3"/>
+        <UML:Attribute isSpecification="false" visibility="public" name="xvec" type="NX2NlzF1ypdz" xmi.id="lZUZm95lCvnZ"/>
+        <UML:Attribute isSpecification="false" visibility="public" name="yvec" type="NX2NlzF1ypdz" xmi.id="iFXN3RdupPh9"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="brick" type="iG7iYiuSKKaT" comment="blocks coordinates" xmi.id="KtQSiosRvk13"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="concrete" type="iG7iYiuSKKaT" xmi.id="Tw7O7E95165t"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="ladder" type="iG7iYiuSKKaT" xmi.id="KGWeY8hGqchK"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="pole" type="iG7iYiuSKKaT" xmi.id="w7ZjWjEr6viy"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="gold" type="iG7iYiuSKKaT" xmi.id="KWFIkdGxnchJ"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="enemy" type="iG7iYiuSKKaT" xmi.id="tRdLv5jEXCLZ"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="player" type="iG7iYiuSKKaT" xmi.id="gKwK8F3bIK4s"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="m_" type="QzNCRxSyHKkH" comment="int brick[2] &#x9;= { 0,  0};&#xa;int concrete[2] = {16, 0};&#xa;int ladder[2] &#x9;= {32 , 0};&#xa;int pole[2]&#x9;&#x9;= {ladder[0] + step, 0};&#xa;int gold[2]&#x9;&#x9;= {96, 0};&#xa;int enemy[2] &#x9;= {gold[0] + step + 1, 0};&#xa;int player[2] &#x9;= {enemy[0] + step + 1, 0};" xmi.id="TEdbJ1Ea0wk5"/>
+        <UML:Operation isSpecification="false" visibility="public" name="Field" stereotype="constructor" xmi.id="jfNd4yIGsjI7" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false"/>
+        <UML:Operation isSpecification="false" visibility="public" name="setBlock" xmi.id="HE0aTW4BmbjC" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="type" type="QzNCRxSyHKkH" xmi.id="LZ1IClOhJUqj" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="x" type="iG7iYiuSKKaT" xmi.id="srE8fpcnopGV" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="y" type="iG7iYiuSKKaT" xmi.id="rXwzNqGLQc5x" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="getBlock" xmi.id="8nYMTKmpAVj6" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="QzNCRxSyHKkH" xmi.id="M8TmF3DzMLJM" kind="return"/>
+          <UML:Parameter isSpecification="false" visibility="private" name="x" type="iG7iYiuSKKaT" xmi.id="uQqGm1Mpngms" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="y" type="iG7iYiuSKKaT" xmi.id="fJWxvt770lB0" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="draw" xmi.id="LkGNuj94t4B6" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="3iFf7xXtRK6b" xmi.id="WO4fVDugWRNj" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="drawBlock" xmi.id="JudnAeJP71g1" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="x" type="iG7iYiuSKKaT" xmi.id="rzrf2Uzrwh6y" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="y" type="iG7iYiuSKKaT" xmi.id="udZYQznn9RFP" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="3iFf7xXtRK6b" xmi.id="H7URqd2311qZ" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="8ZZ1txiH0FFt" xmi.id="4sQ35aXCPVLH" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+       </UML:Classifier.feature>
+       <UML:Namespace.ownedElement>
+        <UML:Class isSpecification="false" visibility="public" name="Type" namespace="oJcJyVvyjyvU" xmi.id="QzNCRxSyHKkH" isRoot="false" isAbstract="false" isLeaf="false"/>
+       </UML:Namespace.ownedElement>
+      </UML:Class>
+      <UML:Class isSpecification="false" visibility="public" name="Enemy" namespace="Logical View" xmi.id="bngE4pWTalBJ" isRoot="false" isAbstract="false" isLeaf="false">
+       <UML:GeneralizableElement.generalization>
+        <UML:Generalization xmi.idref="uBHGOJM9NYzS"/>
+       </UML:GeneralizableElement.generalization>
+       <UML:Classifier.feature>
+        <UML:Operation isSpecification="false" visibility="public" name="Enemy" stereotype="constructor" xmi.id="8mdpPfF2B1Hq" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="iG7iYiuSKKaT" xmi.id="rZ3NU33VhDWF" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="iG7iYiuSKKaT" xmi.id="uc42eTQEtn25" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="~ Enemy" xmi.id="LmAf3fTms7or" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false"/>
+        <UML:Operation isSpecification="false" visibility="public" name="tick" xmi.id="0BPYvUUdwgt9" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="LIW3zHvxMVCx" xmi.id="U8Fq42m2cT1V" kind="return"/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="XscoSGVGouiy" xmi.id="XHMXRV12u837" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="t4LxB7z96463" xmi.id="fNX55TSH5uDQ" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="playerCatched" xmi.id="3QCxI8PMIsLR" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="LIW3zHvxMVCx" xmi.id="UlpYbFEjkrMe" kind="return"/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="XscoSGVGouiy" xmi.id="SB5MFRF1prA2" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+       </UML:Classifier.feature>
+       <UML:Namespace.ownedElement>
+        <UML:Class isSpecification="false" visibility="public" name="digData" namespace="bngE4pWTalBJ" xmi.id="jy4Ea7PZsvk8" isRoot="false" isAbstract="false" isLeaf="false">
+         <UML:Classifier.feature>
+          <UML:Attribute isSpecification="false" visibility="public" name="timeRemain" type="iG7iYiuSKKaT" xmi.id="FKTAgASbdvB5"/>
+          <UML:Attribute isSpecification="false" visibility="public" name="x" type="iG7iYiuSKKaT" xmi.id="ngkwlO3lQQr4"/>
+          <UML:Attribute isSpecification="false" visibility="public" name="y" type="iG7iYiuSKKaT" xmi.id="qnHHIR3w6Yk5"/>
+          <UML:Attribute isSpecification="false" visibility="public" name="oldBlockType" type="QzNCRxSyHKkH" xmi.id="GHdVsfQhqBCd"/>
+         </UML:Classifier.feature>
+        </UML:Class>
+       </UML:Namespace.ownedElement>
+      </UML:Class>
+      <UML:Class isSpecification="false" visibility="public" name="Player" namespace="Logical View" xmi.id="GDyrC26V8d2Y" isRoot="false" isAbstract="false" isLeaf="false">
+       <UML:GeneralizableElement.generalization>
+        <UML:Generalization xmi.idref="AkGN3FUY8uJw"/>
+       </UML:GeneralizableElement.generalization>
+       <UML:Classifier.feature>
+        <UML:Attribute isSpecification="false" visibility="private" name="trap" type="OB2cFkOWmIuV" xmi.id="5fPxv1UOTeZd"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="action_" type="XEVqpYi9md54" xmi.id="m3VOUo2wo4SA"/>
+        <UML:Attribute isSpecification="false" visibility="private" name="trapIterator" type="iG7iYiuSKKaT" xmi.id="vGrE5URXkLB6"/>
+        <UML:Operation isSpecification="false" visibility="public" name="~ Player" xmi.id="k0M1GEWBsSQS" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false"/>
+        <UML:Operation isSpecification="false" visibility="public" name="Player" stereotype="constructor" xmi.id="ucQW82tpLXgB" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="field" type="XscoSGVGouiy" xmi.id="e9YDQCAKvyNW" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="deleteTrap" xmi.id="AYk4iY8fX3ji" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false"/>
+        <UML:Operation isSpecification="false" visibility="public" name="tick" xmi.id="tz9dQuZApMvc" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="LIW3zHvxMVCx" xmi.id="cmd7midppuL8" kind="return"/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="XscoSGVGouiy" xmi.id="Yf8SmpanVYD4" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="UxAu2vwQWA5V" xmi.id="gWPFTcIUMmNV" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="keyEvent" xmi.id="VU6JOL2us5TN" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="XEVqpYi9md54" xmi.id="EzYSETEbD4o5" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="setTrap" xmi.id="hL5mAkLECWIN" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter isSpecification="false" visibility="private" name="field" type="XscoSGVGouiy" xmi.id="fKVnlEDFMweL" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation isSpecification="false" visibility="public" name="checkTraps" xmi.id="l3lKnIUpNbfv" isRoot="false" isQuery="false" isAbstract="false" isLeaf="false">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter type="LIW3zHvxMVCx" xmi.id="6YlgMU2STcVm" kind="return"/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="XscoSGVGouiy" xmi.id="yIx09IDmHDkZ" value=""/>
+          <UML:Parameter isSpecification="false" visibility="private" name="" type="UxAu2vwQWA5V" xmi.id="885GLKlsQkN3" value=""/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+       </UML:Classifier.feature>
+       <UML:Namespace.ownedElement>
+        <UML:Class isSpecification="false" visibility="public" name="Action" namespace="GDyrC26V8d2Y" xmi.id="XEVqpYi9md54" isRoot="false" isAbstract="false" isLeaf="false"/>
+        <UML:Class isSpecification="false" visibility="public" name="struct digData" namespace="GDyrC26V8d2Y" xmi.id="H1QT1EoZyPXM" isRoot="false" isAbstract="false" isLeaf="false"/>
+       </UML:Namespace.ownedElement>
+      </UML:Class>
+      <UML:Generalization isSpecification="false" visibility="public" name="" namespace="Logical View" xmi.id="AkGN3FUY8uJw" discriminator="" child="GDyrC26V8d2Y" parent="MGjh7XTVOLf1"/>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="uBHGOJM9NYzS" xmi.id="7FlvZAOWJZnj" client="GDyrC26V8d2Y"/>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="bngE4pWTalBJ" xmi.id="EXmD5hEnpg26" client="GDyrC26V8d2Y"/>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="uBHGOJM9NYzS" xmi.id="hLtHnwQTWrHh" client="GDyrC26V8d2Y"/>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="uBHGOJM9NYzS" xmi.id="l5EJJRFuxK8E" client="GDyrC26V8d2Y"/>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="bngE4pWTalBJ" xmi.id="1OWRqY4P2Uk2" client="GDyrC26V8d2Y"/>
+      <UML:Dependency isSpecification="false" visibility="public" name="" namespace="Logical View" supplier="uBHGOJM9NYzS" xmi.id="a1Ius9tlT6EC" client="GDyrC26V8d2Y"/>
+     </UML:Namespace.ownedElement>
+     <XMI.extension xmi.extender="umbrello">
+      <diagrams>
+       <diagram showattsig="1" linewidth="0" fillcolor="#ffff00" snapy="25" usefillcolor="1" griddotcolor="#d3d3d3" showops="1" canvaswidth="0" showscope="1" font="Noto Sans,10,-1,0,50,0,0,0,0,0" snapx="25" zoom="100" isopen="1" showopsig="1" textcolor="#000000" snapgrid="0" showstereotype="1" showpackage="1" documentation="" showgrid="0" linecolor="#ff0000" showatts="1" localid="-1" showattribassocs="1" showpubliconly="0" snapcsgrid="0" name="Диаграмма классов" type="1" xmi.id="YoUconFHbk8Z" backgroundcolor="#ffffff" canvasheight="0">
+        <widgets/>
+        <messages/>
+        <associations/>
+       </diagram>
+       <diagram showattsig="1" linewidth="0" fillcolor="#ffff00" snapy="25" usefillcolor="1" griddotcolor="#d3d3d3" showops="1" canvaswidth="1911.79" showscope="1" font="Noto Sans,10,-1,0,50,0,0,0,0,0" snapx="25" zoom="61" isopen="1" showopsig="1" textcolor="#000000" snapgrid="0" showstereotype="1" showpackage="1" documentation="" showgrid="0" linecolor="#ff0000" showatts="1" localid="-1" showattribassocs="1" showpubliconly="0" snapcsgrid="0" name="Диаграмма классов_1" type="1" xmi.id="ugR3mFjCOQaX" backgroundcolor="#ffffff" canvasheight="1423.31">
+        <widgets>
+         <classwidget x="-553.239" isinstance="0" linewidth="0" showattsigs="601" fillcolor="#ffff00" showopsigs="601" usefillcolor="1" y="-625.667" height="612" showscope="1" usesdiagramusefillcolor="0" font="Noto Sans,10,-1,0,50,0,0,0,0,0" width="285" textcolor="#000000" showstereotype="1" showpackage="1" linecolor="#ff0000" localid="7na9dmZrYBHs" usesdiagramfillcolor="0" showpubliconly="0" xmi.id="MGjh7XTVOLf1" showattributes="1" showoperations="1"/>
+         <classwidget x="-1300" isinstance="0" linewidth="0" showattsigs="601" fillcolor="#ffff00" showopsigs="601" usefillcolor="1" y="-67" height="198" showscope="1" usesdiagramusefillcolor="0" font="Noto Sans,10,-1,0,50,0,0,0,0,0" width="337" textcolor="#000000" showstereotype="1" showpackage="1" linecolor="#ff0000" localid="COIFaxTwixm7" usesdiagramfillcolor="0" showpubliconly="0" xmi.id="GDyrC26V8d2Y" showattributes="1" showoperations="1"/>
+         <classwidget x="-1331.94" isinstance="0" linewidth="0" showattsigs="601" fillcolor="#ffff00" showopsigs="601" usefillcolor="1" y="-438.705" height="252" showscope="1" usesdiagramusefillcolor="0" font="Noto Sans,10,-1,0,50,0,0,0,0,0" width="396" textcolor="#000000" showstereotype="1" showpackage="1" linecolor="#ff0000" localid="DB8XQCwOfmJV" usesdiagramfillcolor="0" showpubliconly="0" xmi.id="0YBnpwuilUPN" showattributes="1" showoperations="1"/>
+         <classwidget x="-402.945" isinstance="0" linewidth="0" showattsigs="601" fillcolor="#ffff00" showopsigs="601" usefillcolor="1" y="61.6419" height="99" showscope="1" usesdiagramusefillcolor="0" font="Noto Sans,10,-1,0,50,0,0,0,0,0" width="202" textcolor="#000000" showstereotype="1" showpackage="1" linecolor="#ff0000" localid="Kzp9gFhDZZdx" usesdiagramfillcolor="0" showpubliconly="0" xmi.id="bngE4pWTalBJ" showattributes="1" showoperations="1"/>
+         <classwidget x="-124.163" isinstance="0" linewidth="0" showattsigs="601" fillcolor="#ffff00" showopsigs="601" usefillcolor="1" y="30.9545" height="378" showscope="1" usesdiagramusefillcolor="0" font="Noto Sans,10,-1,0,50,0,0,0,0,0" width="276" textcolor="#000000" showstereotype="1" showpackage="1" linecolor="#ff0000" localid="zAYMMGHF228n" usesdiagramfillcolor="0" showpubliconly="0" xmi.id="oJcJyVvyjyvU" showattributes="1" showoperations="1"/>
+         <classwidget x="-880.829" isinstance="0" linewidth="0" showattsigs="601" fillcolor="#ffff00" showopsigs="601" usefillcolor="1" y="206.74" height="162" showscope="1" usesdiagramusefillcolor="0" font="Noto Sans,10,-1,0,50,0,0,0,0,0" width="207" textcolor="#000000" showstereotype="1" showpackage="1" linecolor="#ff0000" localid="LLzreiQE63Ln" usesdiagramfillcolor="0" showpubliconly="0" xmi.id="ZefgotNKqpTP" showattributes="1" showoperations="1"/>
+        </widgets>
+        <messages/>
+        <associations>
+         <assocwidget widgetbid="MGjh7XTVOLf1" linecolor="#ff0000" linewidth="0" fillcolor="#ffff00" type="500" widgetaid="GDyrC26V8d2Y" seqnum="" totalcountb="2" xmi.id="AkGN3FUY8uJw" totalcounta="2" usefillcolor="1" textcolor="none" indexa="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" indexb="1" font="Noto Sans,10,-1,0,50,0,0,0,0,0">
+          <linepath layout="Polyline">
+           <startpoint startx="-963" starty="-67"/>
+           <endpoint endx="-553.239" endy="-67"/>
+          </linepath>
+         </assocwidget>
+         <assocwidget widgetbid="MGjh7XTVOLf1" linecolor="#ff0000" linewidth="0" fillcolor="#ffff00" type="500" widgetaid="bngE4pWTalBJ" seqnum="" totalcountb="2" xmi.id="uBHGOJM9NYzS" totalcounta="2" usefillcolor="1" textcolor="none" indexa="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="192" indexb="1" font="Noto Sans,10,-1,0,50,0,0,0,0,0">
+          <linepath layout="Polyline">
+           <startpoint startx="-317.061" starty="61.6419"/>
+           <endpoint endx="-317.061" endy="-13.667"/>
+          </linepath>
+         </assocwidget>
+         <assocwidget widgetbid="bngE4pWTalBJ" linecolor="#ff0000" linewidth="0" fillcolor="#ffff00" type="502" widgetaid="GDyrC26V8d2Y" seqnum="" totalcountb="2" xmi.id="EXmD5hEnpg26" totalcounta="2" usefillcolor="1" textcolor="none" indexa="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" indexb="1" font="Noto Sans,10,-1,0,50,0,0,0,0,0">
+          <linepath layout="Polyline">
+           <startpoint startx="-963" starty="76.2886"/>
+           <endpoint endx="-402.945" endy="76.2886"/>
+          </linepath>
+         </assocwidget>
+         <assocwidget widgetbid="bngE4pWTalBJ" linecolor="#ff0000" linewidth="0" fillcolor="#ffff00" type="502" widgetaid="ZefgotNKqpTP" seqnum="" totalcountb="2" xmi.id="IEQhlnFnPGcd" totalcounta="2" usefillcolor="1" textcolor="none" indexa="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" indexb="1" font="Noto Sans,10,-1,0,50,0,0,0,0,0">
+          <linepath layout="Polyline">
+           <startpoint startx="-673.829" starty="206.74"/>
+           <endpoint endx="-402.945" endy="160.642"/>
+          </linepath>
+         </assocwidget>
+         <assocwidget totalcounta="2" totalcountb="2" linewidth="0" fillcolor="#ffff00" visibilityA="1" widgetaid="ZefgotNKqpTP" usefillcolor="1" usesdiagramusefillcolor="12" font="Noto Sans,10,-1,0,50,0,0,0,0,0" indexa="1" visibilityB="1" textcolor="none" seqnum="" changeabilityA="900" widgetbid="oJcJyVvyjyvU" linecolor="#ff0000" changeabilityB="900" usesdiagramfillcolor="0" indexb="1" type="510" xmi.id="XI5aB5G6K5Ao">
+          <linepath layout="Polyline">
+           <startpoint startx="-673.829" starty="206.74"/>
+           <endpoint endx="-124.163" endy="206.74"/>
+          </linepath>
+          <floatingtext x="-185" isinstance="0" linewidth="0" fillcolor="none" usefillcolor="1" y="189" height="22" usesdiagramusefillcolor="1" font="Noto Sans,10,-1,0,50,0,0,0,0,0" posttext="" width="44" textcolor="none" showstereotype="1" linecolor="#ff0000" localid="8LyI8k7ZvVUD" text="field_" usesdiagramfillcolor="1" xmi.id="cZ2ZxWYOlJmM" pretext="-" role="710"/>
+         </assocwidget>
+         <assocwidget totalcounta="2" totalcountb="2" linewidth="0" fillcolor="#ffff00" visibilityA="1" widgetaid="ZefgotNKqpTP" usefillcolor="1" usesdiagramusefillcolor="48" font="Noto Sans,10,-1,0,50,0,0,0,0,0" indexa="1" visibilityB="1" textcolor="none" seqnum="" changeabilityA="900" widgetbid="GDyrC26V8d2Y" linecolor="#ff0000" changeabilityB="900" usesdiagramfillcolor="0" indexb="1" type="510" xmi.id="bIoNltbAwbop">
+          <linepath layout="Polyline">
+           <startpoint startx="-880.829" starty="206.74"/>
+           <endpoint endx="-963" endy="131"/>
+          </linepath>
+          <floatingtext x="-961" isinstance="0" linewidth="0" fillcolor="none" usefillcolor="1" y="134" height="22" usesdiagramusefillcolor="1" font="Noto Sans,10,-1,0,50,0,0,0,0,0" posttext="" width="56" textcolor="none" showstereotype="1" linecolor="#ff0000" localid="KbXOBLMcjxsl" text="player_" usesdiagramfillcolor="1" xmi.id="Ly9q8y8Sd7hw" pretext="-" role="710"/>
+         </assocwidget>
+        </associations>
+       </diagram>
+       <diagram showattsig="1" linewidth="0" fillcolor="#ffff00" snapy="25" usefillcolor="1" griddotcolor="#d3d3d3" showops="1" canvaswidth="1221" showscope="1" font="Noto Sans,10,-1,0,50,0,0,0,0,0" snapx="25" zoom="100" isopen="0" showopsig="1" textcolor="#000000" snapgrid="0" showstereotype="1" showpackage="1" documentation="" showgrid="0" linecolor="#ff0000" showatts="1" localid="-1" autoincrementsequence="0" showattribassocs="1" showpubliconly="0" snapcsgrid="0" name="communication diagram" type="4" xmi.id="TmLmaNkmzXMH" backgroundcolor="#ffffff" canvasheight="460">
+        <widgets/>
+        <messages/>
+        <associations/>
+       </diagram>
+      </diagrams>
+     </XMI.extension>
+    </UML:Model>
+    <UML:Model isSpecification="false" visibility="public" name="Use Case View" namespace="m1" xmi.id="Use Case View" isRoot="false" isAbstract="false" isLeaf="false">
+     <UML:Namespace.ownedElement/>
+    </UML:Model>
+    <UML:Model isSpecification="false" visibility="public" name="Component View" namespace="m1" xmi.id="Component View" isRoot="false" isAbstract="false" isLeaf="false">
+     <UML:Namespace.ownedElement>
+      <UML:Artifact isSpecification="false" visibility="public" drawas="1" name="creature.hpp" namespace="Component View" xmi.id="PPT7jbxaEG0n" isRoot="false" isAbstract="false" isLeaf="false"/>
+      <UML:Artifact isSpecification="false" visibility="public" drawas="1" name="enemy.hpp" namespace="Component View" xmi.id="xGml9Qb2ldYT" isRoot="false" isAbstract="false" isLeaf="false"/>
+      <UML:Artifact isSpecification="false" visibility="public" drawas="1" name="field.hpp" namespace="Component View" xmi.id="gqDLBUzGnLIs" isRoot="false" isAbstract="false" isLeaf="false"/>
+      <UML:Artifact isSpecification="false" visibility="public" drawas="1" name="game.hpp" namespace="Component View" xmi.id="7tVzvnBAZSMr" isRoot="false" isAbstract="false" isLeaf="false"/>
+      <UML:Artifact isSpecification="false" visibility="public" drawas="1" name="painter.hpp" namespace="Component View" xmi.id="DQvwlMcsieLW" isRoot="false" isAbstract="false" isLeaf="false"/>
+      <UML:Artifact isSpecification="false" visibility="public" drawas="1" name="player.hpp" namespace="Component View" xmi.id="icpJ9vXBciIx" isRoot="false" isAbstract="false" isLeaf="false"/>
+     </UML:Namespace.ownedElement>
+     <XMI.extension xmi.extender="umbrello">
+      <diagrams>
+       <diagram showattsig="1" linewidth="0" fillcolor="#ffff00" snapy="25" usefillcolor="1" griddotcolor="#d3d3d3" showops="1" canvaswidth="993" showscope="1" font="Noto Sans,10,-1,0,50,0,0,0,0,0" snapx="25" zoom="100" isopen="0" showopsig="1" textcolor="#000000" snapgrid="0" showstereotype="1" showpackage="1" documentation="" showgrid="0" linecolor="#ff0000" showatts="1" localid="-1" showattribassocs="1" showpubliconly="0" snapcsgrid="0" name="Диаграмма компонентов" type="7" xmi.id="LeQD3hS7GIX9" backgroundcolor="#ffffff" canvasheight="295">
+        <widgets/>
+        <messages/>
+        <associations/>
+       </diagram>
+      </diagrams>
+     </XMI.extension>
+    </UML:Model>
+    <UML:Model isSpecification="false" visibility="public" name="Deployment View" namespace="m1" xmi.id="Deployment View" isRoot="false" isAbstract="false" isLeaf="false">
+     <UML:Namespace.ownedElement/>
+    </UML:Model>
+    <UML:Model isSpecification="false" visibility="public" name="Entity Relationship Model" namespace="m1" xmi.id="Entity Relationship Model" isRoot="false" isAbstract="false" isLeaf="false">
+     <UML:Namespace.ownedElement/>
+    </UML:Model>
+   </UML:Namespace.ownedElement>
+  </UML:Model>
+ </XMI.content>
+ <XMI.extensions xmi.extender="umbrello">
+  <docsettings documentation="" uniqueid="PuoviomKMa2S" viewid="ugR3mFjCOQaX"/>
+  <listview>
+   <listitem type="800" id="Views" open="1">
+    <listitem type="821" id="Component View" open="1">
+     <listitem type="819" label="Диаграмма компонентов" id="LeQD3hS7GIX9" open="0"/>
+     <listitem type="824" id="PPT7jbxaEG0n" open="0"/>
+     <listitem type="824" id="xGml9Qb2ldYT" open="0"/>
+     <listitem type="824" id="gqDLBUzGnLIs" open="0"/>
+     <listitem type="824" id="7tVzvnBAZSMr" open="0"/>
+     <listitem type="824" id="DQvwlMcsieLW" open="0"/>
+     <listitem type="824" id="icpJ9vXBciIx" open="0"/>
+    </listitem>
+    <listitem type="801" id="Logical View" open="1">
+     <listitem type="807" label="Диаграмма классов" id="YoUconFHbk8Z" open="0"/>
+     <listitem type="807" label="Диаграмма классов_1" id="ugR3mFjCOQaX" open="0"/>
+     <listitem type="830" id="Datatypes" open="0">
+      <listitem type="829" id="LIW3zHvxMVCx" open="1"/>
+      <listitem type="829" id="BnNud6ZwXt1Y" open="1"/>
+      <listitem type="829" id="I4gSxBgJcaLt" open="0"/>
+      <listitem type="829" id="yiVucS6WpyND" open="1"/>
+      <listitem type="829" id="XscoSGVGouiy" open="0"/>
+      <listitem type="829" id="NmUlRlanMxpJ" open="1"/>
+      <listitem type="829" id="Tt6t1fl66Zpd" open="0"/>
+      <listitem type="829" id="iG7iYiuSKKaT" open="1"/>
+      <listitem type="829" id="8ZZ1txiH0FFt" open="0"/>
+      <listitem type="829" id="YAOQKZmbCIHV" open="1"/>
+      <listitem type="829" id="3iFf7xXtRK6b" open="0"/>
+      <listitem type="829" id="t4LxB7z96463" open="0"/>
+      <listitem type="829" id="PdEBfqJdSMMl" open="1"/>
+      <listitem type="829" id="chyGHcWL1RZH" open="0"/>
+      <listitem type="829" id="UxAu2vwQWA5V" open="0"/>
+      <listitem type="829" id="NX2NlzF1ypdz" open="0"/>
+      <listitem type="829" id="bqDjK8MnOEZM" open="1"/>
+      <listitem type="829" id="OB2cFkOWmIuV" open="0"/>
+      <listitem type="829" id="DsApWChi7FXW" open="0"/>
+      <listitem type="829" id="32JP8u1tt5Rd" open="1"/>
+      <listitem type="829" id="JEUYU9Yti88m" open="1"/>
+      <listitem type="829" id="MfyzFBu3dNpN" open="1"/>
+     </listitem>
+     <listitem type="806" label="communication diagram" id="TmLmaNkmzXMH" open="0"/>
+     <listitem type="813" id="MGjh7XTVOLf1" open="0">
+      <listitem type="815" id="A1OiQRMMjRFN" open="0"/>
+      <listitem type="815" id="EPUhalyDfI1U" open="0"/>
+      <listitem type="815" id="zLVJ37XpWlvp" open="0"/>
+      <listitem type="815" id="o6FNesn0DoIj" open="0"/>
+      <listitem type="815" id="YUxCUhZmHPO7" open="0"/>
+      <listitem type="815" id="uC0qKs1HXfVQ" open="0"/>
+      <listitem type="815" id="2Wdv09uSJ80K" open="0"/>
+      <listitem type="815" id="xFCDoojKHjBs" open="0"/>
+      <listitem type="815" id="KM3e5yHcnw8E" open="0"/>
+      <listitem type="815" id="9zAg2gUY9oSF" open="0"/>
+      <listitem type="815" id="Hut6DYYJxTNG" open="0"/>
+      <listitem type="815" id="SPeafkZraTyw" open="0"/>
+      <listitem type="815" id="nvk1JCE1nES5" open="0"/>
+      <listitem type="814" id="9ZiCwLqVq5nC" open="0"/>
+      <listitem type="814" id="k0hqRAqU5iQL" open="0"/>
+      <listitem type="814" id="3YoL8QjCrDCK" open="0"/>
+      <listitem type="815" id="JtDH5nyamI5f" open="0"/>
+      <listitem type="815" id="COS1NF6M6s3N" open="0"/>
+      <listitem type="815" id="Pr7StZYNhsXe" open="0"/>
+      <listitem type="815" id="1zBYwRgNKqal" open="0"/>
+      <listitem type="815" id="jyPecCcSbo9s" open="0"/>
+      <listitem type="815" id="LcFNelZGwS7t" open="0"/>
+      <listitem type="815" id="bCARjwlMDtjE" open="0"/>
+      <listitem type="815" id="aVkywZvapf9v" open="0"/>
+      <listitem type="815" id="QtyWW4bJmYPs" open="0"/>
+      <listitem type="814" id="P1HfiEzNwGEF" open="0"/>
+      <listitem type="815" id="DbVeP5wQxMZM" open="0"/>
+      <listitem type="814" id="K3OAhE0qkcR1" open="0"/>
+      <listitem type="814" id="VD0uqGMEhQMj" open="0"/>
+      <listitem type="815" id="PmLBpjN2nuqP" open="0"/>
+      <listitem type="814" id="K4CVlaB9GRhs" open="0"/>
+      <listitem type="814" id="uNGQNgxvwsAY" open="0"/>
+      <listitem type="814" id="V3Z3Edhn0y5r" open="0"/>
+     </listitem>
+     <listitem type="813" id="bngE4pWTalBJ" open="0">
+      <listitem type="815" id="LmAf3fTms7or" open="0"/>
+      <listitem type="813" id="jy4Ea7PZsvk8" open="0">
+       <listitem type="814" id="GHdVsfQhqBCd" open="0"/>
+       <listitem type="814" id="FKTAgASbdvB5" open="0"/>
+       <listitem type="814" id="ngkwlO3lQQr4" open="0"/>
+       <listitem type="814" id="qnHHIR3w6Yk5" open="0"/>
+      </listitem>
+      <listitem type="815" id="8mdpPfF2B1Hq" open="0"/>
+      <listitem type="815" id="3QCxI8PMIsLR" open="0"/>
+      <listitem type="815" id="0BPYvUUdwgt9" open="0"/>
+     </listitem>
+     <listitem type="813" id="oJcJyVvyjyvU" open="0">
+      <listitem type="814" id="KtQSiosRvk13" open="0"/>
+      <listitem type="814" id="Tw7O7E95165t" open="0"/>
+      <listitem type="815" id="LkGNuj94t4B6" open="0"/>
+      <listitem type="815" id="JudnAeJP71g1" open="0"/>
+      <listitem type="814" id="tRdLv5jEXCLZ" open="0"/>
+      <listitem type="815" id="jfNd4yIGsjI7" open="0"/>
+      <listitem type="815" id="8nYMTKmpAVj6" open="0"/>
+      <listitem type="814" id="KWFIkdGxnchJ" open="0"/>
+      <listitem type="814" id="C3UshvX3smRt" open="0"/>
+      <listitem type="814" id="KGWeY8hGqchK" open="0"/>
+      <listitem type="814" id="x5FmfXXNvdZ3" open="0"/>
+      <listitem type="814" id="TEdbJ1Ea0wk5" open="0"/>
+      <listitem type="814" id="gKwK8F3bIK4s" open="0"/>
+      <listitem type="814" id="0uZixMiuY5Rh" open="0"/>
+      <listitem type="814" id="unkLOhJY5WmR" open="0"/>
+      <listitem type="814" id="w7ZjWjEr6viy" open="0"/>
+      <listitem type="815" id="HE0aTW4BmbjC" open="0"/>
+      <listitem type="814" id="GDeKtvTVf9Fo" open="0"/>
+      <listitem type="813" id="QzNCRxSyHKkH" open="0"/>
+      <listitem type="814" id="lZUZm95lCvnZ" open="0"/>
+      <listitem type="814" id="iFXN3RdupPh9" open="0"/>
+     </listitem>
+     <listitem type="813" id="ZefgotNKqpTP" open="0">
+      <listitem type="815" id="gBbCyNsUPjWp" open="0"/>
+      <listitem type="814" id="dL5G8azcUhum" open="0"/>
+      <listitem type="815" id="wWQRuDDPMv3i" open="0"/>
+      <listitem type="814" id="XI5aB5G6K5Ao" open="0"/>
+      <listitem type="815" id="YstrlkYBaMW7" open="0"/>
+      <listitem type="815" id="rOjn1sH8k2Yx" open="0"/>
+      <listitem type="814" id="bIoNltbAwbop" open="0"/>
+      <listitem type="815" id="NsV1D5sHv8Gm" open="0"/>
+     </listitem>
+     <listitem type="813" id="ICAx0iLL5p0k" open="0"/>
+     <listitem type="813" id="CZ0SOEDzpAxM" open="0">
+      <listitem type="814" id="EDFeiXkLVdw8" open="0"/>
+      <listitem type="814" id="8FmQkviqrO8Z" open="0"/>
+      <listitem type="814" id="rjvcu9DcCQHS" open="0"/>
+     </listitem>
+     <listitem type="813" id="0YBnpwuilUPN" open="0">
+      <listitem type="814" id="wQW7ZvpyF07I" open="0"/>
+      <listitem type="814" id="amYZD5dFBrFu" open="0"/>
+      <listitem type="814" id="ggDRT1uDDA29" open="0"/>
+      <listitem type="814" id="gDAtaVik3A8m" open="0"/>
+      <listitem type="814" id="C6vH0hjojCzg" open="0"/>
+      <listitem type="815" id="jgoeBePgmHMw" open="0"/>
+      <listitem type="815" id="0c9DBfUo3QAD" open="0"/>
+      <listitem type="815" id="ECdhTPtyOd5p" open="0"/>
+      <listitem type="814" id="7n5OEWNpHoSy" open="0"/>
+      <listitem type="814" id="pviXQ2zyeaIj" open="0"/>
+      <listitem type="815" id="S03FsiSJROeM" open="0"/>
+      <listitem type="814" id="YTgHi3DHAiyG" open="0"/>
+      <listitem type="814" id="HrOiGfTjutFV" open="0"/>
+     </listitem>
+     <listitem type="813" id="GDyrC26V8d2Y" open="0">
+      <listitem type="815" id="k0M1GEWBsSQS" open="0"/>
+      <listitem type="813" id="XEVqpYi9md54" open="0"/>
+      <listitem type="814" id="m3VOUo2wo4SA" open="0"/>
+      <listitem type="815" id="l3lKnIUpNbfv" open="0"/>
+      <listitem type="815" id="AYk4iY8fX3ji" open="0"/>
+      <listitem type="815" id="VU6JOL2us5TN" open="0"/>
+      <listitem type="815" id="ucQW82tpLXgB" open="0"/>
+      <listitem type="815" id="hL5mAkLECWIN" open="0"/>
+      <listitem type="813" id="H1QT1EoZyPXM" open="0"/>
+      <listitem type="815" id="tz9dQuZApMvc" open="0"/>
+      <listitem type="814" id="5fPxv1UOTeZd" open="0"/>
+      <listitem type="814" id="vGrE5URXkLB6" open="0"/>
+     </listitem>
+     <listitem type="813" id="54D53spx9AiF" open="0">
+      <listitem type="813" id="NYqB6ivsMBwO" open="0"/>
+     </listitem>
+     <listitem type="813" id="ZxrvXddL8YrS" open="0"/>
+     <listitem type="813" id="yVAR0u9ERLi9" open="0"/>
+    </listitem>
+    <listitem type="836" id="Entity Relationship Model" open="1"/>
+    <listitem type="802" id="Use Case View" open="1"/>
+    <listitem type="827" id="Deployment View" open="1"/>
+   </listitem>
+  </listview>
+  <codegeneration>
+   <codegenerator language="C++"/>
+  </codegeneration>
+ </XMI.extensions>
+</XMI>

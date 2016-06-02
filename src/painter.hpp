@@ -3,9 +3,9 @@
 
 /* Image type - contains height, width, and data */
 struct Image {
-    int sizeX;
-    int sizeY;
-    unsigned char *data;
+	int sizeX;
+	int sizeY;
+	unsigned char *data;
 };
 typedef struct Image Image;
 
@@ -26,4 +26,5 @@ private:
 	unsigned int compression;
 	unsigned int pixelDataOffset;
 	unsigned int sizeImage;
+	unsigned short int bpp;
 };

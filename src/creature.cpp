@@ -67,9 +67,13 @@ void Creature::updateBlocks(Field &field, Field::Type creatueType)
 bool Creature::jumpTest(Field &field)
 {
 	//"fly" and "jump" fix
-	if (
-		(oldBlockType != Field::LADDER) &&
-		(field.getBlock(testX, testY) == Field::EMPTY)
+	testBlockType = field.getBlock(testX, testY);
+	if ((
+		oldBlockType != Field::LADDER &&
+		testBlockType == Field::EMPTY) ||(
+		oldBlockType == Field::LADDER2 &&
+		testBlockType == Field::LADDER2
+		)
 		)
 		return true;
 	else

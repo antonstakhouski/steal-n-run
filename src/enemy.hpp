@@ -13,7 +13,6 @@ public:
 	Enemy(int, int);
 	~Enemy();
 	bool tick(Field &, Player &);
-	void updateBlocks(Field &);
 	bool playerCatched(Field &);
 private:
 };

@@ -62,42 +62,44 @@ bool Player::checkTraps(Field &field, std::vector<Enemy> &enemies)
     if (trap[trapIterator].timeRemain > 0)
       trap[trapIterator].timeRemain--;
 
+    else{
     //if is goin to close
-    if (trap[trapIterator].timeRemain == 0){
+      if (trap[trapIterator].timeRemain == 0){
     //player is in a trap
-      trap[trapIterator].timeRemain--;
-      if (getX() == trap[trapIterator].x && 
-        getY() == trap[trapIterator].y)
-        return false;
+        trap[trapIterator].timeRemain--;
+        if (getX() == trap[trapIterator].x && 
+          getY() == trap[trapIterator].y)
+          return false;
 
       //search for enemies
-      for(unsigned int i = 0; i < enemies.size();i++){
-        if (enemies[i].getX() == trap[trapIterator].x && 
-          enemies[i].getY() == trap[trapIterator].y)
-        {
+        for(unsigned int i = 0; i < enemies.size();i++){
+          if (enemies[i].getX() == trap[trapIterator].x && 
+            enemies[i].getY() == trap[trapIterator].y)
+          {
           //fix this in future
           //cause this this can be LADDER
           //or enemy can be on the top of the trap
-          enemies[i].setUpdateFlag(false);
-          field.setBlock(Field::BRICK, trap[trapIterator].x, 
-            trap[trapIterator].y);
-          enemies[i].setOldBlockType(Field::EMPTY);
-          enemies[i].setY(enemies[i].getY() - 1);
-          enemies[i].setOldX(enemies[i].getX());
-          enemies[i].setOldY(enemies[i].getY());
-          field.setBlock(Field::ENEMY, enemies[i].getX(), 
-            enemies[i].getY());
-          enemies[i].setUpdateFlag(true);
-          goto retToTrapCheck;
+            enemies[i].setUpdateFlag(false);
+            field.setBlock(Field::BRICK, trap[trapIterator].x, 
+              trap[trapIterator].y);
+            enemies[i].setOldBlockType(Field::EMPTY);
+            enemies[i].setY(enemies[i].getY() - 1);
+            enemies[i].setOldX(enemies[i].getX());
+            enemies[i].setOldY(enemies[i].getY());
+            field.setBlock(Field::ENEMY, enemies[i].getX(), 
+              enemies[i].getY());
+            enemies[i].setUpdateFlag(true);
+            goto retToTrapCheck;
+          }
         }
-      }
 
       //if trap is empty
-      field.setBlock(Field::BRICK, trap[trapIterator].x, 
-        trap[trapIterator].y);   
+        field.setBlock(Field::BRICK, trap[trapIterator].x, 
+          trap[trapIterator].y);   
+      }
+      retToTrapCheck:
+      (void)trapIterator;
     }
-    retToTrapCheck:
-    (void)trapIterator;
   }
   return true;
 }

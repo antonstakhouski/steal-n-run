@@ -15,7 +15,7 @@ int Painter::imageLoad(char *filename, Image *image) {
 	FILE *file;
     unsigned int i;                    // standard counter.
     unsigned short int planes;          // number of planes in image (must be 1) 
-    unsigned short int bpp;             // number of bits per pixel (must be 24)
+   
 
     // make sure the file is there.
     if ((file = fopen(filename, "rb"))==NULL)
@@ -107,7 +107,7 @@ int Painter::imageLoad(char *filename, Image *image) {
     }
 
     unsigned char temp;
-    for (i = 0; i < sizeImage; i += 3) { 
+    for (i = 0; i < sizeImage; i += bpp/8) { 
     	// reverse all of the colors. (bgr -> rgb)
     	temp = image->data[i];
     	image->data[i] = image->data[i + 2];
@@ -117,11 +117,11 @@ int Painter::imageLoad(char *filename, Image *image) {
     //reverse string order
     for (int i = 0; i < image->sizeY / 2; i++) {
     	for (int j = 0; j < image->sizeX; j++){
-    		for (int z = 0; z < 3; z++){
-    			temp = image->data[i * image->sizeX * 3 + j*3  + z];
-    			image->data[i * image->sizeX * 3 + j*3 +z] = 
-    			image->data[(image->sizeY - 2 - i) * image->sizeX * 3 + j*3 + z];
-    			image->data[(image->sizeY - 2 - i) * image->sizeX * 3 + j*3 + z] = temp;
+    		for (int z = 0; z < bpp/8; z++){
+    			temp = image->data[i * image->sizeX * bpp/8 + j*bpp/8  + z];
+    			image->data[i * image->sizeX * bpp/8 + j*bpp/8 +z] = 
+    			image->data[(image->sizeY - 2 - i) * image->sizeX * bpp/8 + j*bpp/8 + z];
+    			image->data[(image->sizeY - 2 - i) * image->sizeX * bpp/8 + j*bpp/8 + z] = temp;
     		}
     	}
     }
@@ -171,7 +171,7 @@ void Painter::loadGLTextures() {
 
     // 2d texture, level of detail 0 (normal), 3 components (red, green, blue), x size from image, y size from image, 
     // border 0 (normal), rgb color data, unsigned byte data, and finally the data itself.
-    glTexImage2D(GL_TEXTURE_RECTANGLE_NV, 0, 3, image1->sizeX, image1->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, image1->data);
+    glTexImage2D(GL_TEXTURE_RECTANGLE_NV, 0, bpp/8, image1->sizeX, image1->sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, image1->data);
     glDisable( GL_TEXTURE_RECTANGLE_NV );
 }
 
